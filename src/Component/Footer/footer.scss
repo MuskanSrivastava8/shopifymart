@@ -1,0 +1,77 @@
+.footer_contact {
+    width: 20%;
+    margin-top: 2%;
+}
+
+.footer_address {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_menu_item_contact {
+    margin: 0.8%;
+    cursor: pointer;
+    padding-left: 4%;
+    padding-right: 4%;
+    border-radius: 8px;
+}
+.footer_menu_item_contact:hover {
+    background-color: rgb(179, 174, 174);
+}
+.footer_message{
+    margin: .1%;
+    font-size: .8rem;
+}
+.footer_messages{
+    margin: .1%;
+    // font-family: math;
+    font-size: .8rem;
+    color: gray;
+}
+.Intro_footer_dark {
+    position: absolute;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: system-ui;
+}
+.Intro_footer_light {
+    position: absolute;
+    width: 100%;
+    background-color: #efe6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(2, 2, 2);
+    font-family: system-ui;
+}
+@media only screen and (max-width: 904px) {
+    //Ipad
+
+    .footer_contact {
+        width: 14%;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+
+    //Iphone XR
+    .footer_contact {
+        width: 24%;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    //Iphone 12 pro
+
+}
+
+@media only screen and (max-width: 376px) {
+    //Iphone SE
+
+}

@@ -12,7 +12,13 @@ const ProductPage = () => {
         return (
           <li>
             {i.category} 
-            <img src={i.images[0]} alt="img"></img>
+          </li>
+        );
+      })}
+      {OrderDataRes.map((i) => {
+        return (
+          <li>
+            {i.category} 
           </li>
         );
       })}
