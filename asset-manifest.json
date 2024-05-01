@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/shopifymart/static/css/main.f855e6bc.css",
+    "main.js": "/shopifymart/static/js/main.55dc19e7.js",
+    "static/js/453.6174c0eb.chunk.js": "/shopifymart/static/js/453.6174c0eb.chunk.js",
+    "static/media/logo.svg": "/shopifymart/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/shopifymart/index.html",
+    "main.f855e6bc.css.map": "/shopifymart/static/css/main.f855e6bc.css.map",
+    "main.55dc19e7.js.map": "/shopifymart/static/js/main.55dc19e7.js.map",
+    "453.6174c0eb.chunk.js.map": "/shopifymart/static/js/453.6174c0eb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.55dc19e7.js"
+  ]
+}
