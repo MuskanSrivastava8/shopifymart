@@ -9,13 +9,14 @@ function CatagoryList() {
     <div className="main_catagoryList">
       {catagoryRes.map((i) => {
         return (
-          <>
-          <SingleItem
-            key={i.imgLink}
-            catagoryName={i.catagoryName}
-            catagoryImageURL={i.imgLink}
-          />
-          </>
+          <React.Fragment>
+            <SingleItem
+              key={i.imgLink}
+              catagoryName={i.catagoryName}
+              catagoryImageURL={i.imgLink}
+      
+            />
+          </React.Fragment>
         );
       })}
     </div>
