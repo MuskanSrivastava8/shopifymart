@@ -1,0 +1,9 @@
+.main_singleItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 10rem;
+    width: 10rem;
+    border: .1rem solid #ff9900;
+    margin: .4rem;
+}

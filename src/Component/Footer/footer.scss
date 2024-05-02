@@ -50,6 +50,24 @@
     color: rgb(2, 2, 2);
     font-family: system-ui;
 }
+.subfooter{
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    background-color: gray;
+    justify-content: space-around;
+}
+
+.moveToTop{
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    background-color: rgb(155, 152, 152);
+    justify-content: space-around;
+}
+
 @media only screen and (max-width: 904px) {
     //Ipad
 

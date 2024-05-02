@@ -11,9 +11,22 @@ export default function Footer() {
 
   return (
     <React.Fragment>
+    <div className="moveToTop"> Home </div>
       <div className="subfooter">
-        <div className="footer_catagory">Catagory</div>
-        <div className="footer_links">links</div>
+        <div className="footer_catagory">
+          <div>Smartphone</div>
+          <div>Laptops</div>
+          <div>Fragnance</div>
+          <div>Skincare</div>
+          <div>Grocery</div>
+          <div>Home Decoration</div>
+        </div>
+        <div className="footer_links">
+          <div>Wishlist</div>
+          <div>Help</div>
+          <div>Cart</div>
+          <div>Profile</div>
+        </div>
       </div>
       <div className={darkModeRes ? "Intro_footer_dark" : "Intro_footer_light"}>
         <div className="footer_contact">
