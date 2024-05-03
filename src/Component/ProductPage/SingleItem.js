@@ -1,24 +1,29 @@
 import React from "react";
-import { Card } from "antd";
-const { Meta } = Card;
+import { useDispatch } from "react-redux";
+import { updateCatagorySelected } from "../../Store/store";
+import "./singleItem.scss";
+
 const SingleItem = (catagoryName) => {
-  const cardClicked = ()=> {
-    console.log("hii", catagoryName.catagoryName)
-  }
+  const dispatch = useDispatch();
+  const cardClicked = () => {
+    dispatch(updateCatagorySelected(catagoryName.catagoryName));
+  };
   return (
     <>
-      <span className="main_singleItem" onClick={cardClicked} style={{backgroundColor:"pink"}}>
+      <div className="main_singleItem" onClick={cardClicked}>
         <div>
           {
             <img
               alt="example"
               src={catagoryName.catagoryImageURL}
-              style={{ height: "6rem" }}
+              style={{ height: "10rem", width: "16rem", borderRadius: ".5rem" }}
             />
           }
         </div>
-        <div style={{ height: "2rem", fontSize: "12px" }}> {catagoryName.catagoryName.toUpperCase()}</div>
-      </span>
+        <div style={{ height: "1rem", fontSize: "12px" }}>
+          {catagoryName.catagoryName.toUpperCase()}
+        </div>
+      </div>
     </>
   );
 };

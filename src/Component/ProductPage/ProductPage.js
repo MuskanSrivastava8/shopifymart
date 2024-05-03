@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import OrderData from "../../Data Response/OrderData";
 import CatagoryList from "./CatagoryList";
 import "./productPage.scss";
 import Slider from "./Slider";
+import { updateItemDataAction } from "../../Store/store";
+import { useDispatch } from "react-redux";
 
 const ProductPage = () => {
   const OrderDataRes = OrderData;
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(updateItemDataAction( OrderDataRes ));
+  },[OrderDataRes])
 
   return (
     <>
