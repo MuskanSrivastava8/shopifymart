@@ -6,7 +6,7 @@ export const storeSlice = createSlice({
     itemData:[],
     wishlist: [],
     cart: [],
-    catagorySelected: [],
+    catagorySelected: undefined,
     theme: [],
   },
   reducers: {

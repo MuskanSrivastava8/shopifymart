@@ -1,27 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import OrderData from "../../Data Response/OrderData";
 import CatagoryList from "./CatagoryList";
 import "./productPage.scss";
 import Slider from "./Slider";
 import { updateItemDataAction } from "../../Store/store";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import CatagoryDetail from "./CatagoryDetail";
 
 const ProductPage = () => {
   const OrderDataRes = OrderData;
   const dispatch = useDispatch();
-  useEffect(()=>{
-    dispatch(updateItemDataAction( OrderDataRes ));
-  },[OrderDataRes])
+  const catagorySelectedResp = useSelector(
+    (store) => store.STORE.catagorySelected
+  );
+
+  useEffect(() => {
+    dispatch(updateItemDataAction(OrderDataRes));
+  }, [OrderDataRes]);
 
   return (
     <>
-      <div>
-        <Slider />
-      </div>
+      <div>{!catagorySelectedResp && <Slider />}</div>
       <div className="Main_headings">Shop By Catagory > </div>
-      <div>
-        <CatagoryList />
-      </div>
+      <div>{!catagorySelectedResp && <CatagoryList />}</div>
+      <div>{catagorySelectedResp && <CatagoryDetail />}</div>
+
       <div>
         {OrderDataRes.map((i) => {
           return <li>{i.category}</li>;
