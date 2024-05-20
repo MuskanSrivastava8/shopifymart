@@ -1,6 +1,8 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
 import "./itemCard.scss";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
 
 function ItemCard(itemsData) {
   const itemsDataRes = itemsData.itemsData;
@@ -9,6 +11,8 @@ function ItemCard(itemsData) {
     ((itemsDataRes.discountPercentage + 100) * itemsDataRes.price) /
     100
   ).toFixed(2);
+  const [value, setValue] = React.useState(itemsDataRes.rating);
+
   return (
     <div className="main_ItemCard">
       <div>
@@ -47,7 +51,9 @@ function ItemCard(itemsData) {
                 ({itemsDataRes.discountPercentage} % OFF)
               </div>
             </div>
-            <div>{itemsDataRes.rating}</div>
+            <div>
+              <Rating name="read-only" value={value} readOnly />
+            </div>
           </div>
           <div className="ItemCard_info_wishlist">
             <FaHeart style={{ color: "red", fontSize: "1.5rem" }} />
