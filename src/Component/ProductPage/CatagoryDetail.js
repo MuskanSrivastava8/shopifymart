@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemCard from "./ItemCard";
 import { useSelector } from "react-redux";
-import "./catagoryDetail.scss"
+import "./catagoryDetail.scss";
+import Button from "@mui/material/Button";
+import { Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { updateCatagorySelected } from "../../Store/store";
 
 const CatagoryDetail = () => {
   const catagorySelectedResp = useSelector(
@@ -11,12 +15,31 @@ const CatagoryDetail = () => {
   const catagoryFilterItems = itemData.filter((i) => {
     return i.category === catagorySelectedResp;
   });
+  const [showHomePage, setshowHomePage] = useState(false);
+  const dispatch = useDispatch();
+
+  console.log(showHomePage);
+  const navigateToHomePage = () => {
+    setshowHomePage(true);
+    dispatch(updateCatagorySelected(""));
+  };
   return (
-    <div className="main_catagoryDetail">
-      {catagorySelectedResp && catagoryFilterItems.map((i) => {
-        return <ItemCard itemsData={i} />;
-      })}
-    </div>
+    <React.Fragment>
+      {showHomePage ? <Navigate to="/ProductPage" replace={true} /> : null}
+      <div className="main_catagoryDetail">
+        <div className="catagoryDetail_btn_div">
+          <Button variant="contained" size="small" onClick={navigateToHomePage}>
+            Back
+          </Button>
+        </div>
+        <div className="catagoryDetail_div">
+          {catagorySelectedResp &&
+            catagoryFilterItems.map((i) => {
+              return <ItemCard itemsData={i} />;
+            })}
+        </div>
+      </div>
+    </React.Fragment>
   );
 };
 

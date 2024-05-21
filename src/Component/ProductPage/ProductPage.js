@@ -11,9 +11,6 @@ import CatagoryDetail from "./CatagoryDetail";
 const ProductPage = () => {
   const OrderDataRes = OrderData;
   const dispatch = useDispatch();
-  const catagorySelectedResp = useSelector(
-    (store) => store.STORE.catagorySelected
-  );
 
   useEffect(() => {
     dispatch(updateItemDataAction(OrderDataRes));
@@ -21,10 +18,9 @@ const ProductPage = () => {
 
   return (
     <>
-      <div>{!catagorySelectedResp && <Slider />}</div>
+      <div>{<Slider />}</div>
       <div className="Main_headings">Shop By Catagory > </div>
-      <div>{!catagorySelectedResp && <CatagoryList />}</div>
-      <div>{catagorySelectedResp && <CatagoryDetail />}</div>
+      <div>{ <CatagoryList />}</div>
 
       <div>
         {OrderDataRes.map((i) => {

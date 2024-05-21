@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 
 function ItemCard(itemsData) {
   const itemsDataRes = itemsData.itemsData;
-  console.log(itemsDataRes);
   const priceBeforeDiscount = (
     ((itemsDataRes.discountPercentage + 100) * itemsDataRes.price) /
     100
