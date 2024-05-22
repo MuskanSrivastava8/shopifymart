@@ -10,8 +10,10 @@
 }
 .catagoryDetail_btn_div{
     display: flex;
-    margin-left: 1rem;
-    margin-top: 1rem;
+    position: sticky;
+    top: 4rem;
+    left: 0rem;
+    z-index: 1;
     
 }
 .catagoryDetail_div{

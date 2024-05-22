@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import { Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateCatagorySelected } from "../../Store/store";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 const CatagoryDetail = () => {
   const catagorySelectedResp = useSelector(
@@ -18,7 +19,6 @@ const CatagoryDetail = () => {
   const [showHomePage, setshowHomePage] = useState(false);
   const dispatch = useDispatch();
 
-  console.log(showHomePage);
   const navigateToHomePage = () => {
     setshowHomePage(true);
     dispatch(updateCatagorySelected(""));
@@ -29,7 +29,7 @@ const CatagoryDetail = () => {
       <div className="main_catagoryDetail">
         <div className="catagoryDetail_btn_div">
           <Button variant="contained" size="small" onClick={navigateToHomePage}>
-            Back
+            <IoIosArrowRoundBack style={{ fontSize: "2rem" }}/>
           </Button>
         </div>
         <div className="catagoryDetail_div">
