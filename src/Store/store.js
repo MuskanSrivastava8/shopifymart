@@ -7,6 +7,7 @@ export const storeSlice = createSlice({
     wishlist: [],
     cart: [],
     catagorySelected: undefined,
+    itemSelected: undefined,
     theme: [],
   },
   reducers: {
@@ -20,7 +21,11 @@ export const storeSlice = createSlice({
 
     updateCatagorySelected : (storeSlice, action) => {
       storeSlice.catagorySelected=action.payload;
+    },
+    
+    updateItemSelected : (storeSlice, action) => {
+      storeSlice.itemSelected=action.payload;
     }
   },
 });
-export const { addWishlistAction, updateItemDataAction, updateCatagorySelected } = storeSlice.actions;
+export const { addWishlistAction, updateItemDataAction, updateCatagorySelected , updateItemSelected} = storeSlice.actions;

@@ -3,7 +3,8 @@ import { FaHeart } from "react-icons/fa";
 import "./itemCard.scss";
 import Rating from "@mui/material/Rating";
 import { Navigate } from "react-router-dom";
-
+import { updateItemSelected } from "../../Store/store";
+import { useDispatch } from "react-redux";
 
 function ItemCard(itemsData) {
   const itemsDataRes = itemsData.itemsData;
@@ -13,9 +14,12 @@ function ItemCard(itemsData) {
   ).toFixed(2);
   const [value, setValue] = React.useState(itemsDataRes.rating);
   const [showDetailPage, setshowDetailPage] = useState(false);
+  const dispatch = useDispatch();
 
   const navigateToDetailPage = () => {
-    console.log(itemsDataRes);
+    console.log(itemsDataRes.id);
+    dispatch(updateItemSelected(itemsDataRes.id));
+
     setshowDetailPage(true);
   };
   return (

@@ -1,0 +1,30 @@
+.detail_page_Main{
+margin-bottom: 4rem;
+}
+
+.detailPage_btn{
+    display: flex;
+    position: sticky;
+    top: 4rem;
+    left: 0rem;
+    z-index: 1;
+}
+.detailPage_data_main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.detailPage_Address{
+    display: flex;
+    flex-direction: row;
+}
+.detailPage_image_data{
+    display: flex;
+    flex-direction: row;
+
+}
+.detailPage_Btn{
+    display: flex;
+    flex-direction: row; 
+}
