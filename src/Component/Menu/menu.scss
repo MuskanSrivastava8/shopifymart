@@ -4,16 +4,17 @@
     height: 4rem;
     width: 100%;
     background-color: #FF9900;
-
     position: sticky;
-top: 0;
-z-index: 1;
+    top: 0;
+    z-index: 1;
 }
+
 .main_left {
     display: flex;
     align-items: center;
     width: 60%;
 }
+
 .main_right {
     display: flex;
     justify-content: space-around;

@@ -15,7 +15,6 @@ const contentStyle = {
 };
 const Slider = () => {
   const onChange = (currentSlide) => {
-    console.log(currentSlide);
   };
   return (
     <Carousel afterChange={onChange}>
