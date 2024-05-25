@@ -1,6 +1,13 @@
 .detail_page_Main{
 margin-bottom: 4rem;
 }
+.detailPage_main_div{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 .detailPage_btn{
     display: flex;
@@ -26,9 +33,12 @@ margin-bottom: 4rem;
     flex-wrap: wrap;
     margin: 1rem;
 }
-.detailPage_Btn{
+.detailPage_btn_set{
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 .details_data{
     display: flex;
@@ -45,4 +55,29 @@ margin-bottom: 4rem;
     align-items: flex-start;
     font-size: .8rem;
     color: #231f1f;
+}
+
+@media only screen and (max-width: 904px) {
+    //Ipad
+
+   
+}
+
+@media only screen and (max-width: 414px) {
+
+    //Iphone XR
+    .detailPage_image_main{
+        margin: 1rem;
+    }
+   
+}
+
+@media only screen and (max-width: 390px) {
+    //Iphone 12 pro
+
+}
+
+@media only screen and (max-width: 376px) {
+    //Iphone SE
+
 }
