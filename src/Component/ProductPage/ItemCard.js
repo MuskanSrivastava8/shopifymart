@@ -18,7 +18,6 @@ function ItemCard(itemsData) {
 
   const navigateToDetailPage = () => {
     dispatch(updateItemSelected(itemsDataRes.id));
-
     setshowDetailPage(true);
   };
   return (

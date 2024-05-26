@@ -1,4 +1,4 @@
-.detail_page_Main{
+#detail_page_Main{
 margin-bottom: 4rem;
 }
 .detailPage_main_div{
@@ -39,6 +39,7 @@ margin-bottom: 4rem;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 2rem;
 }
 .details_data{
     display: flex;
@@ -55,6 +56,7 @@ margin-bottom: 4rem;
     align-items: flex-start;
     font-size: .8rem;
     color: #231f1f;
+
 }
 .details_extra_info_div{
     display: flex;
@@ -62,7 +64,17 @@ margin-bottom: 4rem;
     justify-content: center;
     align-items: center;
 }
-
+.similar_product_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1rem;
+    font-size: .8rem;
+    font-weight: 700;
+    background-color: #f7f0f0;
+    padding: 0.5rem;
+}
 @media only screen and (max-width: 904px) {
     //Ipad
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { Navigate } from "react-router-dom";
@@ -7,10 +7,9 @@ import { useSelector } from "react-redux";
 import Rating from "@mui/material/Rating";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { CiSquareCheck } from "react-icons/ci";
-
 import { FaMoneyCheckAlt } from "react-icons/fa";
-
 import { PiKeyReturnThin } from "react-icons/pi";
+import ItemCard from "../ProductPage/ItemCard";
 
 const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
@@ -33,16 +32,23 @@ const DetailPage = (catagoryName) => {
   const [value, setValue] = React.useState(itemSelectedResult[0].rating);
 
   console.log(itemSelectedResult && itemSelectedResult[0]);
+  const catagorySelectedResp = useSelector(
+    (store) => store.STORE.catagorySelected
+  );
+  const itemData = useSelector((store) => store.STORE.itemData);
+  const catagoryFilterItems = itemData.filter((i) => {
+    return i.category === catagorySelectedResp;
+  });
+  useEffect(() => {
+    document.getElementById("detail_page_Main").scrollIntoView();
+  }, [itemSelectedResp]);
 
   return (
     <React.Fragment>
       {showCatagoryPage ? (
         <Navigate to="/CatagoryDetail" replace={true} />
       ) : null}
-
-      {itemSelectedResp && (
-        <div className="detail_page_Main">
-          <div className="detailPage_btn">
+      <div className="detailPage_btn">
             <Button
               variant="contained"
               size="small"
@@ -51,6 +57,8 @@ const DetailPage = (catagoryName) => {
               <IoIosArrowRoundBack style={{ fontSize: "2rem" }} />
             </Button>
           </div>
+      {itemSelectedResp && (
+        <div id="detail_page_Main">
           <div className="detailPage_main_div">
             <div className="detailPage_image_main">
               <img
@@ -165,35 +173,7 @@ const DetailPage = (catagoryName) => {
                       Easy 14 days returns and exchanges
                     </div>
                   </div>
-                  <div className="detailPage_btn_set">
-                    <div>
-                      <Button
-                        variant="contained"
-                        size="small"
-                        onClick={navigateToCatagoryPage}
-                      >
-                        Remove
-                      </Button>
-                    </div>
-                    <div>
-                      <Button
-                        variant="contained"
-                        size="small"
-                        onClick={navigateToCatagoryPage}
-                      >
-                        Save
-                      </Button>
-                    </div>
-                    <div>
-                      <Button
-                        variant="contained"
-                        size="small"
-                        onClick={navigateToCatagoryPage}
-                      >
-                        Buy
-                      </Button>
-                    </div>
-                  </div>
+
                   <div style={{ display: "flex", gap: ".2rem" }}>
                     <div>
                       <CiDeliveryTruck
@@ -210,12 +190,59 @@ const DetailPage = (catagoryName) => {
                       Free delivery available
                     </div>
                   </div>
+                  <div className="detailPage_btn_set">
+                    <div>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        onClick={navigateToCatagoryPage}
+                      >
+                        WishList
+                      </Button>
+                    </div>
+                    <div>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        onClick={navigateToCatagoryPage}
+                      >
+                        Remove
+                      </Button>
+                    </div>
+                    <div>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        onClick={navigateToCatagoryPage}
+                      >
+                        Add
+                      </Button>
+                    </div>
+                    <div>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        onClick={navigateToCatagoryPage}
+                      >
+                        Buy now
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       )}
+
+      <div className="similar_product_text"> SIMILAR PRODUCTS</div>
+
+      <div className="catagoryDetail_div">
+        {catagorySelectedResp &&
+          catagoryFilterItems.map((i) => {
+            return <ItemCard itemsData={i} />;
+          })}
+      </div>
     </React.Fragment>
   );
 };
