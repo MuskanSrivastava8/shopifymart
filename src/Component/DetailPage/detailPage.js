@@ -6,6 +6,11 @@ import "./detailPage.scss";
 import { useSelector } from "react-redux";
 import Rating from "@mui/material/Rating";
 import { CiDeliveryTruck } from "react-icons/ci";
+import { CiSquareCheck } from "react-icons/ci";
+
+import { FaMoneyCheckAlt } from "react-icons/fa";
+
+import { PiKeyReturnThin } from "react-icons/pi";
 
 const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
@@ -60,24 +65,37 @@ const DetailPage = (catagoryName) => {
                   <div style={{ fontWeight: "700", fontSize: "1rem" }}>
                     {itemSelectedResult[0].title}
                   </div>
-                  <div style={{ fontSize: "small", color: "gray" }}>
-                    {itemSelectedResult[0].brand}
+                  <div style={{ fontSize: "small" }}>
+                    "<i>{itemSelectedResult[0].description}</i>"
                   </div>
-                  <div style={{ fontSize: "1rem",textTransform: "capitalize" }}>
+                  <div style={{ fontSize: "1rem" }}>
                     <span
                       style={{
                         fontWeight: "700",
                         fontSize: "0.8rem",
-                        color:"#878787",
+                        color: "#878787",
                       }}
                     >
-                      Catagory 
+                      From Seller
+                    </span>{" "}
+                    {itemSelectedResult[0].brand}
+                  </div>
+
+                  <div
+                    style={{ fontSize: "1rem", textTransform: "capitalize" }}
+                  >
+                    <span
+                      style={{
+                        fontWeight: "700",
+                        fontSize: "0.8rem",
+                        color: "#878787",
+                      }}
+                    >
+                      Catagory
                     </span>{" "}
                     {itemSelectedResult[0].category}
                   </div>
-                  <div style={{ fontSize: "1rem" }}>
-                    {itemSelectedResult[0].description}
-                  </div>
+
                   <div
                     style={{
                       color: "red",
@@ -134,9 +152,18 @@ const DetailPage = (catagoryName) => {
                     {Math.trunc(Math.random() * 50)} Reviews
                   </div>
                   <div className="detail_extra_info">
-                    <div>100% Original Products</div>
-                    <div>Pay on delivery might be available</div>
-                    <div>Easy 14 days returns and exchanges</div>
+                    <div className="details_extra_info_div">
+                      <CiSquareCheck />
+                      100% Original Products
+                    </div>
+                    <div className="details_extra_info_div">
+                      <FaMoneyCheckAlt />
+                      Pay on delivery might be available
+                    </div>
+                    <div className="details_extra_info_div">
+                      <PiKeyReturnThin />
+                      Easy 14 days returns and exchanges
+                    </div>
                   </div>
                   <div className="detailPage_btn_set">
                     <div>
@@ -168,6 +195,11 @@ const DetailPage = (catagoryName) => {
                     </div>
                   </div>
                   <div style={{ display: "flex", gap: ".2rem" }}>
+                    <div>
+                      <CiDeliveryTruck
+                        style={{ fontSize: "1rem", color: "#ff006f" }}
+                      />
+                    </div>
                     <div
                       style={{
                         color: "#ff006f",
@@ -175,12 +207,7 @@ const DetailPage = (catagoryName) => {
                         fontSize: "0.8rem",
                       }}
                     >
-                      Free delivery
-                    </div>
-                    <div>
-                      <CiDeliveryTruck
-                        style={{ fontSize: "1rem", color: "#ff006f" }}
-                      />
+                      Free delivery available
                     </div>
                   </div>
                 </div>
