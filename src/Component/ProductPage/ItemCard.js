@@ -3,8 +3,8 @@ import { FaHeart } from "react-icons/fa";
 import "./itemCard.scss";
 import Rating from "@mui/material/Rating";
 import { Navigate } from "react-router-dom";
-import { updateItemSelected } from "../../Store/store";
-import { useDispatch } from "react-redux";
+import { updateItemSelected, updateWishList } from "../../Store/store";
+import { useDispatch, useSelector } from "react-redux";
 
 function ItemCard(itemsData) {
   const itemsDataRes = itemsData.itemsData;
@@ -14,15 +14,25 @@ function ItemCard(itemsData) {
   ).toFixed(2);
   const [value, setValue] = React.useState(itemsDataRes.rating);
   const [showDetailPage, setshowDetailPage] = useState(false);
-  const dispatch = useDispatch();
+  const [wishlistBtnClicked, setwishlistBtnClicked] = useState(false);
 
+  const dispatch = useDispatch();
+  const wishListResp = useSelector(
+    (store) => store.STORE.wishlist
+  );
   const navigateToDetailPage = () => {
     dispatch(updateItemSelected(itemsDataRes.id));
     setshowDetailPage(true);
   };
+  const addToWishList = () => {
+    dispatch(updateWishList(itemsDataRes.id));
+    setwishlistBtnClicked(true);
+  };
+console.log("wishListResp",wishListResp)
+  
   return (
     <React.Fragment>
-      {showDetailPage ? <Navigate to="/DetailPage" replace={true} /> : null}
+      {showDetailPage && !wishlistBtnClicked ? <Navigate to="/DetailPage" replace={true} /> : null}
 
       <div className="main_ItemCard" onClick={navigateToDetailPage}>
         <div>
@@ -65,8 +75,8 @@ function ItemCard(itemsData) {
                 <Rating name="read-only" value={value} readOnly />
               </div>
             </div>
-            <div className="ItemCard_info_wishlist">
-              <FaHeart style={{ color: "red", fontSize: "1.5rem" }} />
+            <div className="ItemCard_info_wishlist" onClick={addToWishList}>
+              <FaHeart style={{ color:wishlistBtnClicked ? "#ff9494" : "red", fontSize: "1.5rem" }} />
             </div>
           </div>
         </div>

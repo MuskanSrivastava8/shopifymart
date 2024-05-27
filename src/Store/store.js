@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const storeSlice = createSlice({
   name: "storeSlice",
   initialState: {
-    itemData:[],
+    itemData: [],
     wishlist: [],
     cart: [],
     catagorySelected: undefined,
@@ -12,20 +12,31 @@ export const storeSlice = createSlice({
   },
   reducers: {
     updateItemDataAction: (storeSlice, action) => {
-      storeSlice.itemData=action.payload;
+      storeSlice.itemData = action.payload;
     },
 
     addWishlistAction: (storeSlice, action) => {
       storeSlice.expenseList.push(action.payload);
     },
 
-    updateCatagorySelected : (storeSlice, action) => {
-      storeSlice.catagorySelected=action.payload;
+    updateCatagorySelected: (storeSlice, action) => {
+      storeSlice.catagorySelected = action.payload;
     },
-    
-    updateItemSelected : (storeSlice, action) => {
-      storeSlice.itemSelected=action.payload;
-    }
+
+    updateItemSelected: (storeSlice, action) => {
+      storeSlice.itemSelected = action.payload;
+    },
+    updateWishList: (storeSlice, action) => {
+      if (!storeSlice.wishlist.includes(action.payload)) {
+        storeSlice.wishlist.push(action.payload);
+      }
+    },
   },
 });
-export const { addWishlistAction, updateItemDataAction, updateCatagorySelected , updateItemSelected} = storeSlice.actions;
+export const {
+  addWishlistAction,
+  updateItemDataAction,
+  updateCatagorySelected,
+  updateItemSelected,
+  updateWishList,
+} = storeSlice.actions;
