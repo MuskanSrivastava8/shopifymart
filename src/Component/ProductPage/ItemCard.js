@@ -14,25 +14,26 @@ function ItemCard(itemsData) {
   ).toFixed(2);
   const [value, setValue] = React.useState(itemsDataRes.rating);
   const [showDetailPage, setshowDetailPage] = useState(false);
-  const [wishlistBtnClicked, setwishlistBtnClicked] = useState(false);
+  const [wishlistBtnOnlyClicked, setWishlistBtnOnlyClicked] = useState(false);
 
   const dispatch = useDispatch();
-  const wishListResp = useSelector(
-    (store) => store.STORE.wishlist
-  );
+  const wishListResp = useSelector((store) => store.STORE.wishlist);
   const navigateToDetailPage = () => {
     dispatch(updateItemSelected(itemsDataRes.id));
     setshowDetailPage(true);
   };
   const addToWishList = () => {
     dispatch(updateWishList(itemsDataRes.id));
-    setwishlistBtnClicked(true);
+    setWishlistBtnOnlyClicked(true);
   };
-console.log("wishListResp",wishListResp)
-  
+  const showWishListResp = useSelector((store) => store.STORE.wishlist);
+
+  const wishlistBtnClicked = showWishListResp.includes(itemsDataRes.id);
   return (
     <React.Fragment>
-      {showDetailPage && !wishlistBtnClicked ? <Navigate to="/DetailPage" replace={true} /> : null}
+      {showDetailPage && !wishlistBtnOnlyClicked ? (
+        <Navigate to="/DetailPage" replace={true} />
+      ) : null}
 
       <div className="main_ItemCard" onClick={navigateToDetailPage}>
         <div>
@@ -76,7 +77,12 @@ console.log("wishListResp",wishListResp)
               </div>
             </div>
             <div className="ItemCard_info_wishlist" onClick={addToWishList}>
-              <FaHeart style={{ color:wishlistBtnClicked ? "#ff9494" : "red", fontSize: "1.5rem" }} />
+              <FaHeart
+                style={{
+                  color: wishlistBtnClicked ? "#ff9494" : "red",
+                  fontSize: "1.5rem",
+                }}
+              />
             </div>
           </div>
         </div>

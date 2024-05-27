@@ -31,7 +31,6 @@ const DetailPage = (catagoryName) => {
   }
   const [value, setValue] = React.useState(itemSelectedResult[0].rating);
 
-  console.log(itemSelectedResult && itemSelectedResult[0]);
   const catagorySelectedResp = useSelector(
     (store) => store.STORE.catagorySelected
   );

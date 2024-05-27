@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import CatagoryDetail from "../ProductPage/CatagoryDetail";
 import DetailPage from "../DetailPage/detailPage";
+import WishListPage from "../WishListPage/WishListPage";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
         <Route exact path="/ProductPage" element={<ProductPage />} />
         <Route exact path="/CatagoryDetail" element={<CatagoryDetail />} />
         <Route exact path="/DetailPage" element={<DetailPage />} />
+        <Route exact path="/WishListPage" element={<WishListPage />} />
 
       </Routes>
 

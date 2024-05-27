@@ -1,0 +1,15 @@
+.Wishlist_main_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.wishList_btn_div{
+    display: flex;
+    position: sticky;
+    top: 4rem;
+    left: 0rem;
+    z-index: 1; 
+}

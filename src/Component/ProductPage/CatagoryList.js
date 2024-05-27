@@ -10,9 +10,6 @@ function CatagoryList() {
   const catagorySelectedResp = useSelector(
     (store) => store.STORE.catagorySelected
   );
-
-  const [showCatagoryDetailPage, setshowCatagoryDetailPage] = useState(false);
-
   return (
     <div className="main_catagoryList">
       {catagoryRes.map((i) => {

@@ -6,11 +6,14 @@ import Slider from "./Slider";
 import { updateItemDataAction } from "../../Store/store";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import CatagoryDetail from "./CatagoryDetail";
+import WishListPage from "../WishListPage/WishListPage";
 
 const ProductPage = () => {
   const OrderDataRes = OrderData;
   const dispatch = useDispatch();
+  const showWishListComponentResp = useSelector(
+    (store) => store.STORE.showWishListComponent
+  );
 
   useEffect(() => {
     dispatch(updateItemDataAction(OrderDataRes));
@@ -18,18 +21,24 @@ const ProductPage = () => {
 
   return (
     <>
-      <div>{<Slider />}</div>
-      <div className="Main_headings">Shop By Catagory > </div>
-      <div>{ <CatagoryList />}</div>
+      {showWishListComponentResp ? (
+        <WishListPage />
+      ) : (
+        <div>
+          <div>{<Slider />}</div>
+          <div className="Main_headings">Shop By Catagory > </div>
+          <div>{<CatagoryList />}</div>
 
-      <div>
-        {OrderDataRes.map((i) => {
-          return <li>{i.category}</li>;
-        })}
-        {OrderDataRes.map((i) => {
-          return <li>{i.category}</li>;
-        })}
-      </div>
+          <div>
+            {OrderDataRes.map((i) => {
+              return <li>{i.category}</li>;
+            })}
+            {OrderDataRes.map((i) => {
+              return <li>{i.category}</li>;
+            })}
+          </div>
+        </div>
+      )}
     </>
   );
 };
