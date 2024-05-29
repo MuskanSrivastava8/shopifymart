@@ -10,8 +10,16 @@ function CatagoryList() {
   const catagorySelectedResp = useSelector(
     (store) => store.STORE.catagorySelected
   );
+  const showWishListComponentResp = useSelector(
+    (store) => store.STORE.showWishListComponent
+  );
+  const showHomePageComponentResp = useSelector(
+    (store) => store.STORE.showHomePageComponent
+  );
   return (
     <div className="main_catagoryList">
+    {showWishListComponentResp ? <Navigate to="/WishListPage" replace={true} /> : null}
+          {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null}
       {catagoryRes.map((i) => {
         return (
           <React.Fragment>
@@ -20,9 +28,7 @@ function CatagoryList() {
               catagoryName={i.catagoryName}
               catagoryImageURL={i.imgLink}
             />
-            {catagorySelectedResp ? (
-              <Navigate to="/CatagoryDetail" replace={true} />
-            ) : null}
+            
           </React.Fragment>
         );
       })}

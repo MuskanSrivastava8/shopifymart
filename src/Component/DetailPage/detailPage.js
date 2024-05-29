@@ -38,24 +38,36 @@ const DetailPage = (catagoryName) => {
   const catagoryFilterItems = itemData.filter((i) => {
     return i.category === catagorySelectedResp;
   });
+  const showWishListComponentResp = useSelector(
+    (store) => store.STORE.showWishListComponent
+  );
+  const showHomePageComponentResp = useSelector(
+    (store) => store.STORE.showHomePageComponent
+  );
   useEffect(() => {
     document.getElementById("detail_page_Main").scrollIntoView();
   }, [itemSelectedResp]);
 
   return (
     <React.Fragment>
+      {showWishListComponentResp ? (
+        <Navigate to="/WishListPage" replace={true} />
+      ) : null}
+      {showHomePageComponentResp ? (
+        <Navigate to="/ProductPage" replace={true} />
+      ) : null}
       {showCatagoryPage ? (
         <Navigate to="/CatagoryDetail" replace={true} />
       ) : null}
       <div className="detailPage_btn">
-            <Button
-              variant="contained"
-              size="small"
-              onClick={navigateToCatagoryPage}
-            >
-              <IoIosArrowRoundBack style={{ fontSize: "2rem" }} />
-            </Button>
-          </div>
+        <Button
+          variant="contained"
+          size="small"
+          onClick={navigateToCatagoryPage}
+        >
+          <IoIosArrowRoundBack style={{ fontSize: "2rem" }} />
+        </Button>
+      </div>
       {itemSelectedResp && (
         <div id="detail_page_Main">
           <div className="detailPage_main_div">

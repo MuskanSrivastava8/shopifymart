@@ -9,6 +9,7 @@ export const storeSlice = createSlice({
     catagorySelected: undefined,
     itemSelected: undefined,
     showWishListComponent: false,
+    showHomePageComponent: false,
     theme: [],
   },
   reducers: {
@@ -30,13 +31,11 @@ export const storeSlice = createSlice({
     updateWishList: (storeSlice, action) => {
       if (!storeSlice.wishlist.includes(action.payload)) {
         storeSlice.wishlist.push(action.payload);
-      }
-      else {
+      } else {
         const index = storeSlice.wishlist.indexOf(action.payload);
-        if (index > -1) { 
+        if (index > -1) {
           storeSlice.wishlist.splice(index, 1);
         }
-        
       }
     },
     setShowWishListComponent: (storeSlice, action) => {
@@ -44,6 +43,9 @@ export const storeSlice = createSlice({
     },
     setShowWishListComponentBackBtn: (storeSlice, action) => {
       storeSlice.showWishListComponent = false;
+    },
+    setShowHomePageComponent: (storeSlice, action) => {
+      storeSlice.showHomePageComponent = action.payload;
     },
   },
 });
@@ -55,4 +57,5 @@ export const {
   updateWishList,
   setShowWishListComponent,
   setShowWishListComponentBackBtn,
+  setShowHomePageComponent,
 } = storeSlice.actions;

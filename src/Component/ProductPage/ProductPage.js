@@ -7,12 +7,16 @@ import { updateItemDataAction } from "../../Store/store";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import WishListPage from "../WishListPage/WishListPage";
+import { Navigate } from "react-router-dom";
 
 const ProductPage = () => {
   const OrderDataRes = OrderData;
   const dispatch = useDispatch();
   const showWishListComponentResp = useSelector(
     (store) => store.STORE.showWishListComponent
+  );
+  const showHomePageComponentResp = useSelector(
+    (store) => store.STORE.showHomePageComponent
   );
 
   useEffect(() => {
@@ -21,24 +25,23 @@ const ProductPage = () => {
 
   return (
     <>
-      {showWishListComponentResp ? (
-        <WishListPage />
-      ) : (
-        <div>
-          <div>{<Slider />}</div>
-          <div className="Main_headings">Shop By Catagory > </div>
-          <div>{<CatagoryList />}</div>
+          {showWishListComponentResp ? <Navigate to="/WishListPage" replace={true} /> : null}
+          {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null}
 
-          <div>
-            {OrderDataRes.map((i) => {
-              return <li>{i.category}</li>;
-            })}
-            {OrderDataRes.map((i) => {
-              return <li>{i.category}</li>;
-            })}
-          </div>
+      <div>
+        <div>{<Slider />}</div>
+        <div className="Main_headings">Shop By Catagory > </div>
+        <div>{<CatagoryList />}</div>
+
+        <div>
+          {OrderDataRes.map((i) => {
+            return <li>{i.category}</li>;
+          })}
+          {OrderDataRes.map((i) => {
+            return <li>{i.category}</li>;
+          })}
         </div>
-      )}
+      </div>
     </>
   );
 };

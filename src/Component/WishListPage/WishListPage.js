@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import ItemCard from "../ProductPage/ItemCard";
 import "./WishListPage.scss";
+import { Navigate } from "react-router-dom";
+
 
 function WishListPage() {
   const showWishListResp = useSelector((store) => store.STORE.wishlist);
@@ -11,8 +13,12 @@ function WishListPage() {
       return data.id === i;
     });
   });
+  const showHomePageComponentResp = useSelector(
+    (store) => store.STORE.showHomePageComponent
+  );
   return (
     <>
+    {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null}
       <div className="Wishlist_main_div">
         {wishListDetails &&
           wishListDetails.map((i) => {
