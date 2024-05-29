@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/shopifymart/static/css/main.7beff648.css",
-    "main.js": "/shopifymart/static/js/main.b7ffc801.js",
+    "main.js": "/shopifymart/static/js/main.68c2b1ed.js",
     "static/js/453.bbdfb335.chunk.js": "/shopifymart/static/js/453.bbdfb335.chunk.js",
     "index.html": "/shopifymart/index.html",
     "main.7beff648.css.map": "/shopifymart/static/css/main.7beff648.css.map",
-    "main.b7ffc801.js.map": "/shopifymart/static/js/main.b7ffc801.js.map",
+    "main.68c2b1ed.js.map": "/shopifymart/static/js/main.68c2b1ed.js.map",
     "453.bbdfb335.chunk.js.map": "/shopifymart/static/js/453.bbdfb335.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7beff648.css",
-    "static/js/main.b7ffc801.js"
+    "static/js/main.68c2b1ed.js"
   ]
 }
