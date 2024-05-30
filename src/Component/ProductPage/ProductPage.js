@@ -32,15 +32,6 @@ const ProductPage = () => {
         <div>{<Slider />}</div>
         <div className="Main_headings">Shop By Catagory > </div>
         <div>{<CatagoryList />}</div>
-
-        <div>
-          {OrderDataRes.map((i) => {
-            return <li>{i.category}</li>;
-          })}
-          {OrderDataRes.map((i) => {
-            return <li>{i.category}</li>;
-          })}
-        </div>
       </div>
     </>
   );

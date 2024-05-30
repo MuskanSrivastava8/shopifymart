@@ -5,6 +5,7 @@ import Rating from "@mui/material/Rating";
 import { Navigate } from "react-router-dom";
 import { updateItemSelected, updateWishList } from "../../Store/store";
 import { useDispatch, useSelector } from "react-redux";
+import { IoHeartDislikeOutline } from "react-icons/io5";
 
 function ItemCard(itemsData) {
   const itemsDataRes = itemsData.itemsData;
@@ -77,12 +78,21 @@ function ItemCard(itemsData) {
               </div>
             </div>
             <div className="ItemCard_info_wishlist" onClick={addToWishList}>
-              <FaHeart
-                style={{
-                  color: wishlistBtnClicked ? "#ff9494" : "red",
-                  fontSize: "1.5rem",
-                }}
-              />
+              {!wishlistBtnClicked ? (
+                <FaHeart
+                  style={{
+                    color: "red",
+                    fontSize: "1.5rem",
+                  }}
+                />
+              ) : (
+                <IoHeartDislikeOutline
+                  style={{
+                    color: "red",
+                    fontSize: "1.5rem",
+                  }}
+                />
+              )}
             </div>
           </div>
         </div>

@@ -8,13 +8,15 @@ import {
   setShowWishListComponent,
   setShowHomePageComponent,
 } from "../../Store/store";
-import { useNavigate } from "react-router-dom";
 import { MdHome } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 const Menu = () => {
   const dispatch = useDispatch();
   const [showWishListPage, setshowWishListPage] = useState(false);
   const [showHomePage, setShowHomePage] = useState(false);
+  const wishlistResp = useSelector((store) => store.STORE.wishlist);
+  const wishlistRespLength = wishlistResp.length;
   const wishListBtnClicked = () => {
     dispatch(setShowWishListComponent(showWishListPage));
     setshowWishListPage(!showWishListPage);
@@ -48,10 +50,13 @@ const Menu = () => {
           <div onClick={homeBtnClicked}>
             <MdHome style={{ fontSize: "1.8rem", cursor: "pointer" }} />
           </div>
-          <div onClick={wishListBtnClicked}>
+          <div className="wishListIcon_main" onClick={wishListBtnClicked}>
             <FaHeart
               style={{ color: "red", fontSize: "1.5rem", cursor: "pointer" }}
             />
+            <div className="wishListIcon_count">
+              <strong>{wishlistRespLength}</strong>
+            </div>{" "}
           </div>
           <div>
             <IoCart style={{ fontSize: "1.5rem", cursor: "pointer" }} />
