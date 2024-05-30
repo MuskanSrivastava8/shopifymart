@@ -13,3 +13,11 @@
     left: 0rem;
     z-index: 1; 
 }
+.No_Item_Found_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    width: 100vh;
+}

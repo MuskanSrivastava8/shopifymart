@@ -8,7 +8,6 @@ import {
   setShowWishListComponent,
   setShowHomePageComponent,
 } from "../../Store/store";
-import { Navigate, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MdHome } from "react-icons/md";
 
@@ -16,8 +15,6 @@ const Menu = () => {
   const dispatch = useDispatch();
   const [showWishListPage, setshowWishListPage] = useState(false);
   const [showHomePage, setShowHomePage] = useState(false);
-  const navigate = useNavigate();
-
   const wishListBtnClicked = () => {
     dispatch(setShowWishListComponent(showWishListPage));
     setshowWishListPage(!showWishListPage);
@@ -45,14 +42,6 @@ const Menu = () => {
           </div>
         </div>
         <div className="main_right">
-          <NavLink
-            to={"/ProductPage"}
-            style={({ isActive }) => ({
-              color: isActive ? "#1c6cfb" : "Black",
-            })}
-          >
-            IMDb clone
-          </NavLink>
           <div>
             <FaUser style={{ fontSize: "1.4rem", cursor: "pointer" }} />
           </div>
