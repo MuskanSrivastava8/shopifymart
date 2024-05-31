@@ -569,6 +569,97 @@ const OrderData =[
           "https://cdn.dummyjson.com/product-images/30/3.jpg",
           "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
       ]
-  }
+  },
+  {
+    "id": 31,
+    "title": "iPhone XR",
+    "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    "price": 899000,
+    "discountPercentage": 27.94,
+    "rating": 4.21,
+    "stock": 44,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/1/2.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/2/3.jpg",
+    ]
+},
+
+{
+    "id": 32,
+    "title": "iPhone 11",
+    "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    "price": 799000,
+    "discountPercentage": 29,
+    "rating": 4.6,
+    "stock": 64,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/1/2.jpg",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/2/2.jpg",
+    ]
+  },
+  {
+    "id": 33,
+    "title": "iPhone 11 PRO",
+    "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    "price": 999000,
+    "discountPercentage": 10,
+    "rating": 4.8,
+    "stock": 40,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/1/2.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+    ]
+  },
+  {
+    "id": 34,
+    "title": "iPhone 11 PRO Max",
+    "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    "price": 109900,
+    "discountPercentage": 15,
+    "rating": 4.7,
+    "stock": 25,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/1/2.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/1/4.jpg",
+    ]
+  },
+  {
+    "id": 35,
+    "title": "iPhone 12",
+    "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    "price": 79900,
+    "discountPercentage": 20,
+    "rating": 4.4,
+    "stock": 55,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/1/2.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/1/3.jpg",
+    ]
+  },
+  {
+    "id": 36,
+    "title": "iPhone 12 Pro",
+    "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    "price": 108900,
+    "discountPercentage": 25,
+    "rating": 4.5,
+    "stock": 85,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/1/2.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/4/2.jpg",
+    ]
+  },
 ]
 export default OrderData
