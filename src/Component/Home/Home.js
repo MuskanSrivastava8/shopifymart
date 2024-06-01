@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import CatagoryDetail from "../ProductPage/CatagoryDetail";
 import DetailPage from "../DetailPage/detailPage";
 import WishListPage from "../WishListPage/WishListPage";
+import CartPage from "../CartPage/CartPage";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
         <Route exact path="/CatagoryDetail" element={<CatagoryDetail />} />
         <Route exact path="/DetailPage" element={<DetailPage />} />
         <Route exact path="/WishListPage" element={<WishListPage />} />
+        <Route exact path="/CartPage" element={<CartPage />} />
 
       </Routes>
 

@@ -44,6 +44,9 @@ const DetailPage = (catagoryName) => {
   const showHomePageComponentResp = useSelector(
     (store) => store.STORE.showHomePageComponent
   );
+  const showCartPageComponentResp = useSelector(
+    (store) => store.STORE.showCartPageComponent
+  );
   useEffect(() => {
     document.getElementById("detail_page_Main").scrollIntoView();
   }, [itemSelectedResp]);
@@ -58,6 +61,9 @@ const DetailPage = (catagoryName) => {
       ) : null}
       {showCatagoryPage ? (
         <Navigate to="/CatagoryDetail" replace={true} />
+      ) : null}
+      {showCartPageComponentResp ? (
+        <Navigate to="/CartPage" replace={true} />
       ) : null}
       <div className="detailPage_btn">
         <Button

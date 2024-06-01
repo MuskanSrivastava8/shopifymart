@@ -15,11 +15,17 @@ function WishListPage() {
   const showHomePageComponentResp = useSelector(
     (store) => store.STORE.showHomePageComponent
   );
+  const showCartPageComponentResp = useSelector(
+    (store) => store.STORE.showCartPageComponent
+  );
   return (
     <>
       {showHomePageComponentResp ? (
         <Navigate to="/ProductPage" replace={true} />
       ) : null}
+      {/* {showCartPageComponentResp ? (
+        <Navigate to="/CartPage" replace={true} />
+      ) : null} */}
       <div className="Wishlist_main_div">
         {wishListDetails.length > 0 ? (
           wishListDetails.map((i) => {

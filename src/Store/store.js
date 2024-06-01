@@ -10,6 +10,7 @@ export const storeSlice = createSlice({
     itemSelected: undefined,
     showWishListComponent: false,
     showHomePageComponent: false,
+    showCartPageComponent: false,
     theme: [],
   },
   reducers: {
@@ -47,6 +48,9 @@ export const storeSlice = createSlice({
     setShowHomePageComponent: (storeSlice, action) => {
       storeSlice.showHomePageComponent = action.payload;
     },
+    setShowCartPageComponent: (storeSlice, action) => {
+      storeSlice.showCartPageComponent = action.payload;
+    },
   },
 });
 export const {
@@ -58,4 +62,5 @@ export const {
   setShowWishListComponent,
   setShowWishListComponentBackBtn,
   setShowHomePageComponent,
+  setShowCartPageComponent,
 } = storeSlice.actions;

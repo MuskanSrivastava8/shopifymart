@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import {
   setShowWishListComponent,
   setShowHomePageComponent,
+  setShowCartPageComponent,
 } from "../../Store/store";
 import { MdHome } from "react-icons/md";
 import { useSelector } from "react-redux";
@@ -15,6 +16,8 @@ const Menu = () => {
   const dispatch = useDispatch();
   const [showWishListPage, setshowWishListPage] = useState(false);
   const [showHomePage, setShowHomePage] = useState(false);
+  const [showCartPage, setShowCartPage] = useState(false);
+
   const wishlistResp = useSelector((store) => store.STORE.wishlist);
   const wishlistRespLength = wishlistResp.length;
   const wishListBtnClicked = () => {
@@ -22,6 +25,13 @@ const Menu = () => {
     setshowWishListPage(!showWishListPage);
     dispatch(setShowHomePageComponent(showWishListPage));
     setShowHomePage(false);
+  };
+  const cartBtnClicked = () => {
+    setShowCartPage(!showCartPage);
+    dispatch(setShowCartPageComponent(showCartPage));
+    //setShowCartPage(!showCartPage);
+    setShowHomePage(showCartPage);
+    dispatch(setShowHomePageComponent(showHomePage));
   };
   const homeBtnClicked = () => {
     setShowHomePage(true);
@@ -58,7 +68,7 @@ const Menu = () => {
               <strong>{wishlistRespLength}</strong>
             </div>{" "}
           </div>
-          <div>
+          <div onClick={cartBtnClicked}>
             <IoCart style={{ fontSize: "1.5rem", cursor: "pointer" }} />
           </div>
         </div>

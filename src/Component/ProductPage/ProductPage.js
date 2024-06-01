@@ -8,17 +8,23 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import WishListPage from "../WishListPage/WishListPage";
 import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const ProductPage = () => {
   const OrderDataRes = OrderData;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const showWishListComponentResp = useSelector(
     (store) => store.STORE.showWishListComponent
   );
   const showHomePageComponentResp = useSelector(
     (store) => store.STORE.showHomePageComponent
   );
-
+  const showCartPageComponentResp = useSelector(
+    (store) => store.STORE.showCartPageComponent
+  );
   useEffect(() => {
     dispatch(updateItemDataAction(OrderDataRes));
   }, [OrderDataRes]);
@@ -27,6 +33,8 @@ const ProductPage = () => {
     <>
           {showWishListComponentResp ? <Navigate to="/WishListPage" replace={true} /> : null}
           {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null}
+          {showCartPageComponentResp ? <Navigate to="/CartPage" replace={true} /> : null}
+
 
       <div>
         <div>{<Slider />}</div>
