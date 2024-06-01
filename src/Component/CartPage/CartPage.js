@@ -22,9 +22,9 @@ function CartPage() {
       {showHomePageComponentResp ? (
         <Navigate to="/ProductPage" replace={true} />
       ) : null}
-      {/* {showWishListComponentResp ? (
+      {showWishListComponentResp ? (
         <Navigate to="/WishListPage" replace={true} />
-      ) : null} */}
+      ) : null}
       hi
     </>
   );

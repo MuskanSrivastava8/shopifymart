@@ -23,9 +23,9 @@ function WishListPage() {
       {showHomePageComponentResp ? (
         <Navigate to="/ProductPage" replace={true} />
       ) : null}
-      {/* {showCartPageComponentResp ? (
+      {showCartPageComponentResp ? (
         <Navigate to="/CartPage" replace={true} />
-      ) : null} */}
+      ) : null}
       <div className="Wishlist_main_div">
         {wishListDetails.length > 0 ? (
           wishListDetails.map((i) => {

@@ -14,30 +14,55 @@ import { useSelector } from "react-redux";
 
 const Menu = () => {
   const dispatch = useDispatch();
-  const [showWishListPage, setshowWishListPage] = useState(false);
-  const [showHomePage, setShowHomePage] = useState(false);
-  const [showCartPage, setShowCartPage] = useState(false);
+  const showWishListComponentRes = useSelector(
+    (store) => store.STORE.showWishListComponent
+  );
+  const showHomePageComponentRes = useSelector(
+    (store) => store.STORE.showHomePageComponent
+  );
+  const showCartPageComponentRes = useSelector(
+    (store) => store.STORE.showCartPageComponent
+  );
+
+  const [showWishListPage, setshowWishListPage] = useState(
+    showWishListComponentRes
+  );
+  const [showHomePage, setShowHomePage] = useState(showHomePageComponentRes);
+  const [showCartPage, setShowCartPage] = useState(showCartPageComponentRes);
 
   const wishlistResp = useSelector((store) => store.STORE.wishlist);
   const wishlistRespLength = wishlistResp.length;
   const wishListBtnClicked = () => {
-    dispatch(setShowWishListComponent(showWishListPage));
-    setshowWishListPage(!showWishListPage);
-    dispatch(setShowHomePageComponent(showWishListPage));
-    setShowHomePage(false);
+    if (showCartPageComponentRes) {
+      dispatch(setShowWishListComponent(false));
+      dispatch(setShowCartPageComponent(false));
+      dispatch(setShowHomePageComponent(false));
+    } else {
+      dispatch(setShowWishListComponent(showWishListPage));
+      setshowWishListPage(!showWishListPage);
+      dispatch(setShowHomePageComponent(showWishListPage));
+      setShowHomePage(false);
+    }
   };
   const cartBtnClicked = () => {
-    setShowCartPage(!showCartPage);
-    dispatch(setShowCartPageComponent(showCartPage));
-    //setShowCartPage(!showCartPage);
-    setShowHomePage(showCartPage);
-    dispatch(setShowHomePageComponent(showHomePage));
+    if (showWishListPage) {
+      dispatch(setShowWishListComponent(showWishListPage));
+      dispatch(setShowCartPageComponent(true));
+      dispatch(setShowHomePageComponent(false));
+    } else {
+      setShowCartPage(!showCartPage);
+      dispatch(setShowCartPageComponent(showCartPage));
+      setShowHomePage(showCartPage);
+      dispatch(setShowHomePageComponent(showHomePage));
+    }
   };
   const homeBtnClicked = () => {
     setShowHomePage(true);
     dispatch(setShowHomePageComponent(true));
     setshowWishListPage(false);
     dispatch(setShowWishListComponent(true));
+    dispatch(setShowCartPageComponent(false));
+    setShowCartPage(false);
   };
   return (
     <>
