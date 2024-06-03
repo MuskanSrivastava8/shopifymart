@@ -10,6 +10,9 @@ import { CiSquareCheck } from "react-icons/ci";
 import { FaMoneyCheckAlt } from "react-icons/fa";
 import { PiKeyReturnThin } from "react-icons/pi";
 import ItemCard from "../ProductPage/ItemCard";
+import { useDispatch } from "react-redux";
+import { updateCart } from "../../Store/store";
+
 
 const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
@@ -18,6 +21,8 @@ const DetailPage = (catagoryName) => {
   };
   const productDataResp = useSelector((store) => store.STORE.itemData);
   const itemSelectedResp = useSelector((store) => store.STORE.itemSelected);
+  const dispatch = useDispatch();
+
   const itemSelectedResult = productDataResp.filter((i) => {
     return i.id === itemSelectedResp;
   });
@@ -50,6 +55,11 @@ const DetailPage = (catagoryName) => {
   useEffect(() => {
     document.getElementById("detail_page_Main").scrollIntoView();
   }, [itemSelectedResp]);
+
+  const AddToCartFunction = ()=> {
+    console.log("itemSelectedResult",itemSelectedResult[0].id)
+    dispatch(updateCart(itemSelectedResult[0].id));
+  }
 
   return (
     <React.Fragment>
@@ -230,7 +240,7 @@ const DetailPage = (catagoryName) => {
                       <Button
                         variant="contained"
                         size="small"
-                        onClick={navigateToCatagoryPage}
+                        onClick={AddToCartFunction}
                       >
                         Add
                       </Button>

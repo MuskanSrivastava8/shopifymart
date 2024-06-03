@@ -3,9 +3,10 @@ import { FaHeart } from "react-icons/fa";
 import "./itemCard.scss";
 import Rating from "@mui/material/Rating";
 import { Navigate } from "react-router-dom";
-import { updateItemSelected, updateWishList } from "../../Store/store";
+import { updateItemSelected, updateWishList, updateCart } from "../../Store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { IoHeartDislikeOutline } from "react-icons/io5";
+import { IoCart } from "react-icons/io5";
 
 function ItemCard(itemsData) {
   const itemsDataRes = itemsData.itemsData;
@@ -30,6 +31,10 @@ function ItemCard(itemsData) {
   const showWishListResp = useSelector((store) => store.STORE.wishlist);
 
   const wishlistBtnClicked = showWishListResp.includes(itemsDataRes.id);
+  const AddToCartFunction = ()=> {
+    console.log("itemSelectedResult",itemsDataRes.id)
+    dispatch(updateCart(itemsDataRes.id));
+  }
   return (
     <React.Fragment>
       {showDetailPage && !wishlistBtnOnlyClicked ? (
@@ -78,21 +83,28 @@ function ItemCard(itemsData) {
               </div>
             </div>
             <div className="ItemCard_info_wishlist" onClick={addToWishList}>
-              {!wishlistBtnClicked ? (
-                <FaHeart
-                  style={{
-                    color: "red",
-                    fontSize: "1.5rem",
-                  }}
-                />
-              ) : (
-                <IoHeartDislikeOutline
-                  style={{
-                    color: "red",
-                    fontSize: "1.5rem",
-                  }}
-                />
-              )}
+              <div>
+                {!wishlistBtnClicked ? (
+                  <FaHeart
+                    style={{
+                      color: "red",
+                      fontSize: "1.5rem",
+                    }}
+                  />
+                ) : (
+                  <IoHeartDislikeOutline
+                    style={{
+                      color: "red",
+                      fontSize: "1.5rem",
+                    }}
+                  />
+                )}
+              </div>
+
+              <div onClick={AddToCartFunction}>
+                {" "}
+                <IoCart style={{ fontSize: "1.5rem", cursor: "pointer" }} />
+              </div>
             </div>
           </div>
         </div>

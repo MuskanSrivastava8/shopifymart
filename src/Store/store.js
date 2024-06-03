@@ -51,6 +51,16 @@ export const storeSlice = createSlice({
     setShowCartPageComponent: (storeSlice, action) => {
       storeSlice.showCartPageComponent = action.payload;
     },
+    updateCart: (storeSlice, action) => {
+      if (!storeSlice.cart.includes(action.payload)) {
+        storeSlice.cart.push(action.payload);
+      } else {
+        const index = storeSlice.cart.indexOf(action.payload);
+        if (index > -1) {
+          storeSlice.cart.splice(index, 1);
+        }
+      }
+    },
   },
 });
 export const {
@@ -63,4 +73,5 @@ export const {
   setShowWishListComponentBackBtn,
   setShowHomePageComponent,
   setShowCartPageComponent,
+  updateCart,
 } = storeSlice.actions;
