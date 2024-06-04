@@ -3,10 +3,15 @@ import { FaHeart } from "react-icons/fa";
 import "./itemCard.scss";
 import Rating from "@mui/material/Rating";
 import { Navigate } from "react-router-dom";
-import { updateItemSelected, updateWishList, updateCart } from "../../Store/store";
+import {
+  updateItemSelected,
+  updateWishList,
+  updateCart,
+} from "../../Store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { IoHeartDislikeOutline } from "react-icons/io5";
-import { IoCart } from "react-icons/io5";
+import { MdShoppingCart } from "react-icons/md";
+import { MdRemoveShoppingCart } from "react-icons/md";
 
 function ItemCard(itemsData) {
   const itemsDataRes = itemsData.itemsData;
@@ -17,9 +22,8 @@ function ItemCard(itemsData) {
   const [value, setValue] = React.useState(itemsDataRes.rating);
   const [showDetailPage, setshowDetailPage] = useState(false);
   const [wishlistBtnOnlyClicked, setWishlistBtnOnlyClicked] = useState(false);
-
+  const [cartBtnOnlyClicked, setCartBtnOnlyClicked] = useState(false);
   const dispatch = useDispatch();
-  const wishListResp = useSelector((store) => store.STORE.wishlist);
   const navigateToDetailPage = () => {
     dispatch(updateItemSelected(itemsDataRes.id));
     setshowDetailPage(true);
@@ -29,15 +33,17 @@ function ItemCard(itemsData) {
     setWishlistBtnOnlyClicked(true);
   };
   const showWishListResp = useSelector((store) => store.STORE.wishlist);
-
+  const cartResp = useSelector((store) => store.STORE.cart);
   const wishlistBtnClicked = showWishListResp.includes(itemsDataRes.id);
-  const AddToCartFunction = ()=> {
-    console.log("itemSelectedResult",itemsDataRes.id)
+  const cartBtnClicked = cartResp.includes(itemsDataRes.id);
+  const AddToCartFunction = () => {
+    console.log("itemSelectedResult", itemsDataRes.id);
     dispatch(updateCart(itemsDataRes.id));
-  }
+    setCartBtnOnlyClicked(true);
+  };
   return (
     <React.Fragment>
-      {showDetailPage && !wishlistBtnOnlyClicked ? (
+      {showDetailPage && !wishlistBtnOnlyClicked && !cartBtnOnlyClicked ? (
         <Navigate to="/DetailPage" replace={true} />
       ) : null}
 
@@ -100,11 +106,26 @@ function ItemCard(itemsData) {
                   />
                 )}
               </div>
-
-              <div onClick={AddToCartFunction}>
-                {" "}
-                <IoCart style={{ fontSize: "1.5rem", cursor: "pointer" }} />
-              </div>
+            </div>
+            <div onClick={AddToCartFunction}>
+              {" "}
+              {!cartBtnClicked ? (
+                <MdShoppingCart
+                  style={{
+                    color: "black",
+                    fontSize: "1.5rem",
+                    cursor: "pointer",
+                  }}
+                />
+              ) : (
+                <MdRemoveShoppingCart
+                  style={{
+                    color: "black",
+                    fontSize: "1.5rem",
+                    cursor: "pointer",
+                  }}
+                />
+              )}
             </div>
           </div>
         </div>
