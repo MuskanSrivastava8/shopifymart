@@ -11,7 +11,7 @@ import { FaMoneyCheckAlt } from "react-icons/fa";
 import { PiKeyReturnThin } from "react-icons/pi";
 import ItemCard from "../ProductPage/ItemCard";
 import { useDispatch } from "react-redux";
-import { updateCart } from "../../Store/store";
+import { updateCart, updateWishList } from "../../Store/store";
 
 
 const DetailPage = (catagoryName) => {
@@ -60,6 +60,9 @@ const DetailPage = (catagoryName) => {
     console.log("itemSelectedResult",itemSelectedResult[0].id)
     dispatch(updateCart(itemSelectedResult[0].id));
   }
+  const AddToWishListFunction = ()=> {
+    console.log("itemSelectedResult",itemSelectedResult[0].id)
+    dispatch(updateWishList(itemSelectedResult[0].id));  }
 
   return (
     <React.Fragment>
@@ -222,7 +225,7 @@ const DetailPage = (catagoryName) => {
                       <Button
                         variant="contained"
                         size="small"
-                        onClick={navigateToCatagoryPage}
+                        onClick={AddToWishListFunction}
                       >
                         WishList
                       </Button>

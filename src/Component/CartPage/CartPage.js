@@ -20,7 +20,7 @@ function CartPage() {
   });
 
   return (
-    <>cart
+    <>
       {showHomePageComponentResp ? (
         <Navigate to="/ProductPage" replace={true} />
       ) : null}
