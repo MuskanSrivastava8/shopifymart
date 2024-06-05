@@ -4,13 +4,6 @@ import ItemCard from "../ProductPage/ItemCard";
 import { Navigate } from "react-router-dom";
 
 function CartPage() {
-  //   const showWishListResp = useSelector((store) => store.STORE.wishlist);
-  //   const itemData = useSelector((store) => store.STORE.itemData);
-  //   let wishListDetails = showWishListResp.map((i) => {
-  //     return itemData.filter((data) => {
-  //       return data.id === i;
-  //     });
-  //   });
   const showHomePageComponentResp = useSelector(
     (store) => store.STORE.showHomePageComponent
   );
@@ -25,8 +18,9 @@ function CartPage() {
       return data.id === i;
     });
   });
+
   return (
-    <>
+    <>cart
       {showHomePageComponentResp ? (
         <Navigate to="/ProductPage" replace={true} />
       ) : null}

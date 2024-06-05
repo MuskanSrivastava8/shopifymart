@@ -32,6 +32,8 @@ const Menu = () => {
 
   const wishlistResp = useSelector((store) => store.STORE.wishlist);
   const wishlistRespLength = wishlistResp.length;
+  const cartResp = useSelector((store) => store.STORE.cart);
+  const cartRespLength = cartResp.length;
   const wishListBtnClicked = () => {
     if (showCartPageComponentRes) {
       dispatch(setShowWishListComponent(false));
@@ -93,8 +95,13 @@ const Menu = () => {
               <strong>{wishlistRespLength}</strong>
             </div>{" "}
           </div>
-          <div onClick={cartBtnClicked}>
-            <IoCart style={{ fontSize: "1.5rem", cursor: "pointer" }} />
+          <div className="cart_main" onClick={cartBtnClicked}>
+            <div>
+              <IoCart style={{ fontSize: "1.5rem", cursor: "pointer" }} />
+            </div>
+            <div className="cart_count">
+              <strong>{cartRespLength}</strong>
+            </div>{" "}
           </div>
         </div>
       </div>

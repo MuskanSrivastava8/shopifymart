@@ -19,7 +19,7 @@ function WishListPage() {
     (store) => store.STORE.showCartPageComponent
   );
   return (
-    <>
+    <>wishlist
       {showHomePageComponentResp ? (
         <Navigate to="/ProductPage" replace={true} />
       ) : null}
