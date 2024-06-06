@@ -12,7 +12,7 @@ import { PiKeyReturnThin } from "react-icons/pi";
 import ItemCard from "../ProductPage/ItemCard";
 import { useDispatch } from "react-redux";
 import { updateCart, updateWishList } from "../../Store/store";
-
+import { setShowWishListComponent, setShowCartPageComponent } from "../../Store/store";
 
 const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
@@ -52,17 +52,21 @@ const DetailPage = (catagoryName) => {
   const showCartPageComponentResp = useSelector(
     (store) => store.STORE.showCartPageComponent
   );
+  dispatch(setShowWishListComponent(true));
+  dispatch(setShowCartPageComponent(false));
+
   useEffect(() => {
     document.getElementById("detail_page_Main").scrollIntoView();
   }, [itemSelectedResp]);
 
-  const AddToCartFunction = ()=> {
-    console.log("itemSelectedResult",itemSelectedResult[0].id)
+  const AddToCartFunction = () => {
+    console.log("itemSelectedResult", itemSelectedResult[0].id);
     dispatch(updateCart(itemSelectedResult[0].id));
-  }
-  const AddToWishListFunction = ()=> {
-    console.log("itemSelectedResult",itemSelectedResult[0].id)
-    dispatch(updateWishList(itemSelectedResult[0].id));  }
+  };
+  const AddToWishListFunction = () => {
+    console.log("itemSelectedResult", itemSelectedResult[0].id);
+    dispatch(updateWishList(itemSelectedResult[0].id));
+  };
 
   return (
     <React.Fragment>

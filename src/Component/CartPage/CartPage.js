@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ItemCard from "../ProductPage/ItemCard";
 import { Navigate } from "react-router-dom";
+import "./CartPage.scss";
 
 function CartPage() {
   const showHomePageComponentResp = useSelector(
@@ -43,7 +44,10 @@ function CartPage() {
             </div>
           </div>
         )}
+        
+        
       </div>
+      <div className="cart_price_div">Price</div>
     </>
   );
 }
