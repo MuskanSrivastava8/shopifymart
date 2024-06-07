@@ -1,0 +1,27 @@
+.main_ItemCart {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px gray;
+    padding: 1rem;
+    box-shadow: rgb(210 202 202) 1px 1px 5px;
+    cursor: pointer;
+}
+
+.ItemCard_info_data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.ItemCard_info{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main_ItemCart:hover {
+    box-shadow: 1px 1px 10px #888888;
+  }

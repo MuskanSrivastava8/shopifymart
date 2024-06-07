@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import ItemCard from "../ProductPage/ItemCard";
 import { Navigate } from "react-router-dom";
 import "./CartPage.scss";
-
+import CartAddeditem from "./CartAddeditem";
 function CartPage() {
   const showHomePageComponentResp = useSelector(
     (store) => store.STORE.showHomePageComponent
@@ -28,11 +28,11 @@ function CartPage() {
       {showWishListComponentResp ? (
         <Navigate to="/WishListPage" replace={true} />
       ) : null}
-      <div className="Wishlist_main_div">
+      <div className="cart_main_div">
         {CartDetails.length > 0 ? (
           CartDetails.map((i) => {
             return i.map((item) => {
-              return <ItemCard itemsData={item} />;
+              return <CartAddeditem itemsData={item} />;
             });
           })
         ) : (
@@ -43,9 +43,7 @@ function CartPage() {
               </span>
             </div>
           </div>
-        )}
-        
-        
+        )}        
       </div>
       <div className="cart_price_div">Price</div>
     </>
