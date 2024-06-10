@@ -60,11 +60,9 @@ const DetailPage = (catagoryName) => {
   }, [itemSelectedResp]);
 
   const AddToCartFunction = () => {
-    console.log("itemSelectedResult", itemSelectedResult[0].id);
     dispatch(updateCart(itemSelectedResult[0].id));
   };
   const AddToWishListFunction = () => {
-    console.log("itemSelectedResult", itemSelectedResult[0].id);
     dispatch(updateWishList(itemSelectedResult[0].id));
   };
 

@@ -37,7 +37,6 @@ function CartAddeditem(itemsData) {
   const wishlistBtnClicked = showWishListResp.includes(itemsDataRes.id);
   const cartBtnClicked = cartResp.includes(itemsDataRes.id);
   const AddToCartFunction = () => {
-    console.log("itemSelectedResult", itemsDataRes.id);
     dispatch(updateCart(itemsDataRes.id));
     setCartBtnOnlyClicked(true);
   };
