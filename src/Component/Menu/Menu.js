@@ -8,6 +8,7 @@ import {
   setShowWishListComponent,
   setShowHomePageComponent,
   setShowCartPageComponent,
+  updateRenderComponent,
 } from "../../Store/store";
 import { MdHome } from "react-icons/md";
 import { useSelector } from "react-redux";
@@ -35,36 +36,40 @@ const Menu = () => {
   const cartResp = useSelector((store) => store.STORE.cart);
   const cartRespLength = cartResp.length;
   const wishListBtnClicked = () => {
-    if (showCartPageComponentRes) {
-      dispatch(setShowWishListComponent(false));
-      dispatch(setShowCartPageComponent(false));
-      dispatch(setShowHomePageComponent(false));
-    } else {
-      dispatch(setShowWishListComponent(showWishListPage));
-      setshowWishListPage(!showWishListPage);
-      dispatch(setShowHomePageComponent(showWishListPage));
-      setShowHomePage(false);
-    }
+    // if (showCartPageComponentRes) {
+    //   dispatch(setShowWishListComponent(false));
+    //   dispatch(setShowCartPageComponent(false));
+    //   dispatch(setShowHomePageComponent(false));
+    // } else {
+    //   dispatch(setShowWishListComponent(showWishListPage));
+    //   setshowWishListPage(!showWishListPage);
+    //   dispatch(setShowHomePageComponent(showWishListPage));
+    //   setShowHomePage(false);
+    // }
+    
+    dispatch(updateRenderComponent('WishListPage'));
   };
   const cartBtnClicked = () => {
-    if (showWishListPage) {
-      dispatch(setShowWishListComponent(showWishListPage));
-      dispatch(setShowCartPageComponent(true));
-      dispatch(setShowHomePageComponent(false));
-    } else {
-      setShowCartPage(!showCartPage);
-      dispatch(setShowCartPageComponent(showCartPage));
-      setShowHomePage(showCartPage);
-      dispatch(setShowHomePageComponent(showHomePage));
-    }
+    // if (showWishListPage) {
+    //   dispatch(setShowWishListComponent(showWishListPage));
+    //   dispatch(setShowCartPageComponent(true));
+    //   dispatch(setShowHomePageComponent(false));
+    // } else {
+    //   setShowCartPage(!showCartPage);
+    //   dispatch(setShowCartPageComponent(showCartPage));
+    //   setShowHomePage(showCartPage);
+    //   dispatch(setShowHomePageComponent(showHomePage));
+    // }
+    dispatch(updateRenderComponent('CartPage'));
   };
   const homeBtnClicked = () => {
-    setShowHomePage(true);
-    dispatch(setShowHomePageComponent(true));
-    setshowWishListPage(false);
-    dispatch(setShowWishListComponent(true));
-    dispatch(setShowCartPageComponent(false));
-    setShowCartPage(false);
+    // setShowHomePage(true);
+    // dispatch(setShowHomePageComponent(true));
+    // setshowWishListPage(false);
+    // dispatch(setShowWishListComponent(true));
+    // dispatch(setShowCartPageComponent(false));
+    // setShowCartPage(false);
+    dispatch(updateRenderComponent('/'));
   };
   return (
     <>

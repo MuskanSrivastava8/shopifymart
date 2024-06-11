@@ -12,6 +12,7 @@ export const storeSlice = createSlice({
     showHomePageComponent: false,
     showCartPageComponent: false,
     theme: [],
+    renderedComponent : '/',
   },
   reducers: {
     updateItemDataAction: (storeSlice, action) => {
@@ -61,6 +62,9 @@ export const storeSlice = createSlice({
         }
       }
     },
+    updateRenderComponent: (storeSlice, action) => {
+      storeSlice.renderedComponent = action.payload;
+    },
   },
 });
 export const {
@@ -74,4 +78,5 @@ export const {
   setShowHomePageComponent,
   setShowCartPageComponent,
   updateCart,
+  updateRenderComponent,
 } = storeSlice.actions;

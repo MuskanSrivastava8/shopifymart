@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import ProductPage from "../ProductPage/ProductPage";
 import Menu from "../Menu/Menu";
 import Footer from "../Footer/Footer";
@@ -7,8 +8,19 @@ import CatagoryDetail from "../ProductPage/CatagoryDetail";
 import DetailPage from "../DetailPage/detailPage";
 import WishListPage from "../WishListPage/WishListPage";
 import CartPage from "../CartPage/CartPage";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const renderedComponentResp = useSelector(
+    (store) => store.STORE.renderedComponent
+  );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate(renderedComponentResp);
+  }, [renderedComponentResp]);
+
   return (
     <div>
       <Menu />
@@ -19,7 +31,6 @@ function Home() {
         <Route exact path="/DetailPage" element={<DetailPage />} />
         <Route exact path="/WishListPage" element={<WishListPage />} />
         <Route exact path="/CartPage" element={<CartPage />} />
-
       </Routes>
 
       <Footer />
