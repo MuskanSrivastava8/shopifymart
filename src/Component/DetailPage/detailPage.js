@@ -62,13 +62,17 @@ const DetailPage = (catagoryName) => {
   const AddToCartFunction = () => {
     dispatch(updateCart(itemSelectedResult[0].id));
   };
+  const RemoveFromCartFunction = () => {
+    dispatch(updateCart(itemSelectedResult[0].id));
+  };
+  
   const AddToWishListFunction = () => {
     dispatch(updateWishList(itemSelectedResult[0].id));
   };
 
   return (
     <React.Fragment>
-      {showWishListComponentResp ? (
+      {/* {showWishListComponentResp ? (
         <Navigate to="/WishListPage" replace={true} />
       ) : null}
       {showHomePageComponentResp ? (
@@ -79,7 +83,7 @@ const DetailPage = (catagoryName) => {
       ) : null}
       {showCartPageComponentResp ? (
         <Navigate to="/CartPage" replace={true} />
-      ) : null}
+      ) : null} */}
       <div className="detailPage_btn">
         <Button
           variant="contained"
@@ -236,7 +240,7 @@ const DetailPage = (catagoryName) => {
                       <Button
                         variant="contained"
                         size="small"
-                        onClick={navigateToCatagoryPage}
+                        onClick={RemoveFromCartFunction}
                       >
                         Remove
                       </Button>

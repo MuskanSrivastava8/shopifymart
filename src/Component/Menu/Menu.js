@@ -62,6 +62,9 @@ const Menu = () => {
     // }
     dispatch(updateRenderComponent('CartPage'));
   };
+  const UserBtnClicked = ()=> {
+    dispatch(updateRenderComponent('UserPage'));
+  }
   const homeBtnClicked = () => {
     // setShowHomePage(true);
     // dispatch(setShowHomePageComponent(true));
@@ -86,7 +89,7 @@ const Menu = () => {
           </div>
         </div>
         <div className="main_right">
-          <div>
+          <div onClick={UserBtnClicked}>
             <FaUser style={{ fontSize: "1.4rem", cursor: "pointer" }} />
           </div>
           <div onClick={homeBtnClicked}>
