@@ -33,7 +33,6 @@ function Home() {
         <Route exact path="/CartPage" element={<CartPage />} />
         <Route exact path="/UserPage" element={<UserPage />} />
       </Routes>
-
       <Footer />
     </div>
   );
