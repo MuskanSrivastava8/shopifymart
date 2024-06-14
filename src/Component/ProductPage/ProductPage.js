@@ -33,6 +33,7 @@ const ProductPage = () => {
   // useEffect(() => {
   //   navigate(renderedComponentResp);
   // }, [renderedComponentResp]);
+  const userDetailResp = useSelector((store) => store.STORE.userDetail);
 
   return (
     <>
@@ -42,7 +43,7 @@ const ProductPage = () => {
 
       <div>
         <div>{<Slider />}</div>
-        <div className="Main_headings">Shop By Catagory > </div>
+        <div className="Main_headings">{userDetailResp ? "Hey" : "" } {userDetailResp ? userDetailResp.firstName : "" } , Shop By Catagory >  </div>
         <div>{<CatagoryList />}</div>
       </div>
     </>
