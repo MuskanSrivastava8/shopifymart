@@ -13,6 +13,7 @@ export const storeSlice = createSlice({
     showCartPageComponent: false,
     theme: [],
     renderedComponent : '/',
+    userDetail:[]
   },
   reducers: {
     updateItemDataAction: (storeSlice, action) => {
@@ -65,6 +66,9 @@ export const storeSlice = createSlice({
     updateRenderComponent: (storeSlice, action) => {
       storeSlice.renderedComponent = action.payload;
     },
+    addUserDetails: (currentSlice, action) => {
+      currentSlice.userDetail=action.payload;
+    },
   },
 });
 export const {
@@ -79,4 +83,5 @@ export const {
   setShowCartPageComponent,
   updateCart,
   updateRenderComponent,
+  addUserDetails,
 } = storeSlice.actions;
