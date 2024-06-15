@@ -37,7 +37,7 @@ const SingleItem = (catagoryName) => {
             <img
               alt="example"
               src={catagoryName.catagoryImageURL}
-              style={{ height: "10rem", width: "16rem", borderRadius: ".5rem" }}
+              style={{ height: "8rem", width: "16rem", borderRadius: ".5rem" }}
             />
           }
         </div>

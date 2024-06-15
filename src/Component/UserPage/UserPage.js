@@ -21,6 +21,7 @@ const UserPage = () => {
   const [remark, setRemark] = useState("");
   const dispatch = useDispatch();
   const userDetailResp = useSelector((store) => store.STORE.userDetail);
+  const profileCreatedResp = useSelector((store) => store.STORE.profileCreated);
 
   const addNewUser = () => {
     setshowForm(true);
@@ -46,7 +47,7 @@ const UserPage = () => {
     setProfileCreated(true);
   };
   let firstNameRes;
-  if (profileCreated == true && userDetailResp !== undefined) {
+  if (profileCreatedResp == true && userDetailResp !== undefined) {
     firstNameRes = userDetailResp.firstName;
   }
   return (
@@ -55,18 +56,31 @@ const UserPage = () => {
         {!showForm && (
           <div
             style={{
-              marginBottom: "1rem",
-              fontSize: "1.5rem",
-              color: "rgb(135, 135, 135)",
+              marginBottom: "2rem",
+              fontSize: ".8rem",
             }}
           >
-            <i> Hey {profileCreated ? firstNameRes : "Anonymous"}</i>,
+            <div style={{
+              marginBottom: "1rem",
+              
+            }}>
+              <strong>
+                <i> Hey {profileCreatedResp ? firstNameRes : "Anonymous"} </i>,
+              </strong>
+            </div>
+            <div style={{ color: "rgb(135, 135, 135)" }}>
+              <i>
+                {profileCreatedResp
+                  ? "Browse through each item and put it in your basket or wishlist...."
+                  : "Make a profile right now to enjoy seamless shopping. "}
+              </i>
+            </div>
           </div>
         )}
         {!showForm && (
           <div>
             <Button variant="contained" size="small" onClick={addNewUser}>
-              {profileCreated ? "Edit User" : "Add New User"}
+              {profileCreatedResp ? "Edit User" : "Add New User"}
             </Button>
           </div>
         )}
