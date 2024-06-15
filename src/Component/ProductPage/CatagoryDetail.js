@@ -5,7 +5,7 @@ import "./catagoryDetail.scss";
 import Button from "@mui/material/Button";
 import { Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { updateCatagorySelected } from "../../Store/store";
+import { updateCatagorySelected,updateRenderComponent } from "../../Store/store";
 import { IoIosArrowRoundBack } from "react-icons/io";
 
 const CatagoryDetail = () => {
@@ -30,11 +30,13 @@ const CatagoryDetail = () => {
 
   const navigateToHomePage = () => {
     setshowHomePage(true);
-    dispatch(updateCatagorySelected(""));
+    // dispatch(updateCatagorySelected(""));
+    dispatch(updateRenderComponent('/'));
+
   };
   return (
     <React.Fragment>
-      {showHomePage ? <Navigate to="/ProductPage" replace={true} /> : null}
+      {/* {showHomePage ? <Navigate to="/ProductPage" replace={true} /> : null}
       {showWishListComponentResp ? (
         <Navigate to="/WishListPage" replace={true} />
       ) : null}
@@ -43,7 +45,7 @@ const CatagoryDetail = () => {
       ) : null}
       {showCartPageComponentResp ? (
         <Navigate to="/CartPage" replace={true} />
-      ) : null}
+      ) : null} */}
       <div className="main_catagoryDetail">
         <div className="catagoryDetail_btn_div">
           <Button variant="contained" size="small" onClick={navigateToHomePage}>

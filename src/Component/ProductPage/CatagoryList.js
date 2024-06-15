@@ -18,8 +18,8 @@ function CatagoryList() {
   );
   return (
     <div className="main_catagoryList">
-    {showWishListComponentResp ? <Navigate to="/WishListPage" replace={true} /> : null}
-          {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null}
+    {/* {showWishListComponentResp ? <Navigate to="/WishListPage" replace={true} /> : null}
+          {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null} */}
       {catagoryRes.map((i) => {
         return (
           <React.Fragment>

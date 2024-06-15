@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { updateCatagorySelected,setShowHomePageComponent } from "../../Store/store";
+import { updateCatagorySelected,setShowHomePageComponent, updateRenderComponent } from "../../Store/store";
 import "./singleItem.scss";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -15,7 +15,9 @@ const SingleItem = (catagoryName) => {
     dispatch(updateCatagorySelected(catagoryName.catagoryName));
     dispatch(setShowHomePageComponent(false));
 
-    navigate("/CatagoryDetail");
+    // navigate("/CatagoryDetail");
+    dispatch(updateRenderComponent('CatagoryDetail'));
+
     
   };
   const catagorySelectedResp = useSelector(
@@ -29,8 +31,8 @@ const SingleItem = (catagoryName) => {
   );
   return (
     <>
-   {showWishListComponentResp ? <Navigate to="/WishListPage" replace={true} /> : null}
-          {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null}
+   {/* {showWishListComponentResp ? <Navigate to="/WishListPage" replace={true} /> : null}
+          {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null} */}
       <div className="main_singleItem" onClick={cardClicked}>
         <div>
           {

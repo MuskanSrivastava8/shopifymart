@@ -12,12 +12,12 @@ import { PiKeyReturnThin } from "react-icons/pi";
 import ItemCard from "../ProductPage/ItemCard";
 import { useDispatch } from "react-redux";
 import { updateCart, updateWishList } from "../../Store/store";
-import { setShowWishListComponent, setShowCartPageComponent } from "../../Store/store";
+import { setShowWishListComponent, setShowCartPageComponent,updateRenderComponent} from "../../Store/store";
 
 const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
   const navigateToCatagoryPage = () => {
-    setshowCatagoryPage(true);
+    dispatch(updateRenderComponent('CatagoryDetail'));
   };
   const productDataResp = useSelector((store) => store.STORE.itemData);
   const itemSelectedResp = useSelector((store) => store.STORE.itemSelected);
