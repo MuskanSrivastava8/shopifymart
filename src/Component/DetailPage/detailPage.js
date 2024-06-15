@@ -18,6 +18,7 @@ const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
   const navigateToCatagoryPage = () => {
     dispatch(updateRenderComponent('CatagoryDetail'));
+    console.log("btn clicked............")
   };
   const productDataResp = useSelector((store) => store.STORE.itemData);
   const itemSelectedResp = useSelector((store) => store.STORE.itemSelected);
@@ -258,7 +259,6 @@ const DetailPage = (catagoryName) => {
                       <Button
                         variant="contained"
                         size="small"
-                        onClick={navigateToCatagoryPage}
                       >
                         Buy now
                       </Button>
