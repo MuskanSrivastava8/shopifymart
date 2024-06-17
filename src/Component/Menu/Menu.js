@@ -4,9 +4,7 @@ import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { IoCart } from "react-icons/io5";
 import { useDispatch } from "react-redux";
-import {
-  updateRenderComponent,
-} from "../../Store/store";
+import { updateRenderComponent } from "../../Store/store";
 import { MdHome } from "react-icons/md";
 import { useSelector } from "react-redux";
 
@@ -17,16 +15,16 @@ const Menu = () => {
   const cartResp = useSelector((store) => store.STORE.cart);
   const cartRespLength = cartResp.length;
   const wishListBtnClicked = () => {
-    dispatch(updateRenderComponent('WishListPage'));
+    dispatch(updateRenderComponent("WishListPage"));
   };
   const cartBtnClicked = () => {
-    dispatch(updateRenderComponent('CartPage'));
+    dispatch(updateRenderComponent("CartPage"));
   };
-  const UserBtnClicked = ()=> {
-    dispatch(updateRenderComponent('UserPage'));
-  }
+  const UserBtnClicked = () => {
+    dispatch(updateRenderComponent("UserPage"));
+  };
   const homeBtnClicked = () => {
-    dispatch(updateRenderComponent('/'));
+    dispatch(updateRenderComponent("/"));
   };
   return (
     <>
@@ -43,11 +41,11 @@ const Menu = () => {
           </div>
         </div>
         <div className="main_right">
-          <div onClick={UserBtnClicked}>
-            <FaUser style={{ fontSize: "1.4rem", cursor: "pointer" }} />
-          </div>
           <div onClick={homeBtnClicked}>
             <MdHome style={{ fontSize: "1.8rem", cursor: "pointer" }} />
+          </div>
+          <div onClick={UserBtnClicked}>
+            <FaUser style={{ fontSize: "1.4rem", cursor: "pointer" }} />
           </div>
           <div className="wishListIcon_main" onClick={wishListBtnClicked}>
             <FaHeart
