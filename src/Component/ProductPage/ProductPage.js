@@ -6,45 +6,81 @@ import Slider from "./Slider";
 import { updateItemDataAction } from "../../Store/store";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import ItemCard from "./ItemCard";
 
 const ProductPage = () => {
   const OrderDataRes = OrderData;
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const itemData = useSelector((store) => store.STORE.itemData);
+  const homeDecorationItems = itemData.filter((i) => {
+    return i.category === "home-decoration";
+  });
+  const smartphonesItems = itemData.filter((i) => {
+    return i.category === "smartphones";
+  });
+  const groceriesItems = itemData.filter((i) => {
+    return i.category === "groceries";
+  });
 
-  const showWishListComponentResp = useSelector(
-    (store) => store.STORE.showWishListComponent
-  );
-  const showHomePageComponentResp = useSelector(
-    (store) => store.STORE.showHomePageComponent
-  );
-  const showCartPageComponentResp = useSelector(
-    (store) => store.STORE.showCartPageComponent
-  );
-  const renderedComponentResp = useSelector(
-    (store) => store.STORE.renderedComponent
-  );
+  const skincareItems = itemData.filter((i) => {
+    return i.category === "skincare";
+  });
+  const fragrancesItems = itemData.filter((i) => {
+    return i.category === "fragrances";
+  });
+  const laptopsItems = itemData.filter((i) => {
+    return i.category === "laptops";
+  });
   useEffect(() => {
     dispatch(updateItemDataAction(OrderDataRes));
-    // navigate(renderedComponentResp);
   }, [OrderDataRes]);
-  // useEffect(() => {
-  //   navigate(renderedComponentResp);
-  // }, [renderedComponentResp]);
   const userDetailResp = useSelector((store) => store.STORE.userDetail);
 
   return (
     <>
-      {/* {showWishListComponentResp ? <Navigate to="/WishListPage" replace={true} /> : null}
-          {showHomePageComponentResp ? <Navigate to="/ProductPage" replace={true} /> : null}
-          {showCartPageComponentResp ? <Navigate to="/CartPage" replace={true} /> : null} */}
-
       <div>
         <div>{<Slider />}</div>
-        <div className="Main_headings">{userDetailResp ? "Hey" : "" } {userDetailResp ? userDetailResp.firstName : "" } , Shop By Catagory >  </div>
+        <div className="Main_headings">
+          {userDetailResp ? "Hey" : ""}{" "}
+          {userDetailResp ? userDetailResp.firstName : ""} , Shop By Catagory >{" "}
+        </div>
         <div>{<CatagoryList />}</div>
+        <div className="Main_headings">Smartphones</div>
+        <div className="HomePagecatagoryDetail_div">
+          {smartphonesItems.map((i) => {
+            return <ItemCard itemsData={i} />;
+          })}
+        </div>
+        <div className="Main_headings">Home Decoration</div>
+        <div className="HomePagecatagoryDetail_div">
+          {homeDecorationItems.map((i) => {
+            return <ItemCard itemsData={i} />;
+          })}
+        </div>
+        <div className="Main_headings">Groceries</div>
+        <div className="HomePagecatagoryDetail_div">
+          {groceriesItems.map((i) => {
+            return <ItemCard itemsData={i} />;
+          })}
+        </div>
+        <div className="Main_headings">Skincare</div>
+        <div className="HomePagecatagoryDetail_div">
+          {skincareItems.map((i) => {
+            return <ItemCard itemsData={i} />;
+          })}
+        </div>
+        <div className="Main_headings">Fragrances</div>
+        <div className="HomePagecatagoryDetail_div">
+          {fragrancesItems.map((i) => {
+            return <ItemCard itemsData={i} />;
+          })}
+        </div>
+        <div className="Main_headings">laptops</div>
+        <div className="HomePagecatagoryDetail_div">
+          {laptopsItems.map((i) => {
+            return <ItemCard itemsData={i} />;
+          })}
+        </div>
       </div>
     </>
   );

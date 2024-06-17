@@ -9,3 +9,14 @@
     padding: .5rem;
     margin-top: 2rem;
 }
+
+.HomePagecatagoryDetail_div{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 1rem;
+    //flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: auto;
+}

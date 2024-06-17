@@ -73,18 +73,6 @@ const DetailPage = (catagoryName) => {
 
   return (
     <React.Fragment>
-      {/* {showWishListComponentResp ? (
-        <Navigate to="/WishListPage" replace={true} />
-      ) : null}
-      {showHomePageComponentResp ? (
-        <Navigate to="/ProductPage" replace={true} />
-      ) : null}
-      {showCatagoryPage ? (
-        <Navigate to="/CatagoryDetail" replace={true} />
-      ) : null}
-      {showCartPageComponentResp ? (
-        <Navigate to="/CartPage" replace={true} />
-      ) : null} */}
       <div className="detailPage_btn">
         <Button
           variant="contained"
