@@ -5,27 +5,62 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { updateRenderComponent } from "../../Store/store";
 
 export default function Footer() {
+  const dispatch = useDispatch();
   const darkModeRes = true;
+  const wishListBtnClicked = () => {
+    dispatch(updateRenderComponent("WishListPage"));
+  };
+  const cartBtnClicked = () => {
+    dispatch(updateRenderComponent("CartPage"));
+  };
+  const UserBtnClicked = () => {
+    dispatch(updateRenderComponent("UserPage"));
+  };
+  const homeBtnClicked = () => {
+    dispatch(updateRenderComponent("/"));
+  };
 
   return (
     <React.Fragment>
-    <div className="moveToTop"> Home </div>
+      <div className="moveToTop"  onClick={homeBtnClicked} style={{ cursor: "pointer" }}> Home </div>
       <div className="subfooter">
         <div className="footer_catagory">
-          <div>Smartphone</div>
-          <div>Laptops</div>
-          <div>Fragnance</div>
-          <div>Skincare</div>
-          <div>Grocery</div>
-          <div>Home Decoration</div>
+          <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
+            Smartphone
+          </div>
+          <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
+            Laptops
+          </div>
+          <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
+            Fragnance
+          </div>
+          <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
+            Skincare
+          </div>
+          <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
+            Grocery
+          </div>
+          <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
+            Home Decoration
+          </div>
         </div>
         <div className="footer_links">
-          <div>Wishlist</div>
-          <div>Help</div>
-          <div>Cart</div>
-          <div>Profile</div>
+          <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
+            Wishlist
+          </div>
+          <div onClick={homeBtnClicked} style={{ cursor: "pointer" }}>
+            Home
+          </div>
+          <div onClick={cartBtnClicked} style={{ cursor: "pointer" }}>
+            Cart
+          </div>
+          <div onClick={UserBtnClicked} style={{ cursor: "pointer" }}>
+            Profile
+          </div>
         </div>
       </div>
       <div className={darkModeRes ? "Intro_footer_dark" : "Intro_footer_light"}>

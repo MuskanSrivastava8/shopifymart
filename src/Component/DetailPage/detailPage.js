@@ -12,13 +12,17 @@ import { PiKeyReturnThin } from "react-icons/pi";
 import ItemCard from "../ProductPage/ItemCard";
 import { useDispatch } from "react-redux";
 import { updateCart, updateWishList } from "../../Store/store";
-import { setShowWishListComponent, setShowCartPageComponent,updateRenderComponent} from "../../Store/store";
+import {
+  setShowWishListComponent,
+  setShowCartPageComponent,
+  updateRenderComponent,
+} from "../../Store/store";
 
 const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
   const navigateToCatagoryPage = () => {
-    dispatch(updateRenderComponent('CatagoryDetail'));
-    console.log("btn clicked............")
+    dispatch(updateRenderComponent(catagorySelectedResp ? "CatagoryDetail" : "/"));
+    console.log("btn clicked............");
   };
   const productDataResp = useSelector((store) => store.STORE.itemData);
   const itemSelectedResp = useSelector((store) => store.STORE.itemSelected);
@@ -44,15 +48,6 @@ const DetailPage = (catagoryName) => {
   const catagoryFilterItems = itemData.filter((i) => {
     return i.category === catagorySelectedResp;
   });
-  const showWishListComponentResp = useSelector(
-    (store) => store.STORE.showWishListComponent
-  );
-  const showHomePageComponentResp = useSelector(
-    (store) => store.STORE.showHomePageComponent
-  );
-  const showCartPageComponentResp = useSelector(
-    (store) => store.STORE.showCartPageComponent
-  );
   dispatch(setShowWishListComponent(true));
   dispatch(setShowCartPageComponent(false));
 
@@ -66,7 +61,7 @@ const DetailPage = (catagoryName) => {
   const RemoveFromCartFunction = () => {
     dispatch(updateCart(itemSelectedResult[0].id));
   };
-  
+
   const AddToWishListFunction = () => {
     dispatch(updateWishList(itemSelectedResult[0].id));
   };
@@ -244,10 +239,7 @@ const DetailPage = (catagoryName) => {
                       </Button>
                     </div>
                     <div>
-                      <Button
-                        variant="contained"
-                        size="small"
-                      >
+                      <Button variant="contained" size="small">
                         Buy now
                       </Button>
                     </div>
@@ -259,8 +251,9 @@ const DetailPage = (catagoryName) => {
         </div>
       )}
 
-      <div className="similar_product_text"> SIMILAR PRODUCTS</div>
-
+      {catagorySelectedResp && (
+        <div className="similar_product_text"> SIMILAR PRODUCTS</div>
+      )}
       <div className="catagoryDetail_div">
         {catagorySelectedResp &&
           catagoryFilterItems.map((i) => {
