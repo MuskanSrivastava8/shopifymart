@@ -661,5 +661,141 @@ const OrderData =[
         "https://cdn.dummyjson.com/product-images/4/2.jpg",
     ]
   },
+  {
+    "id": 37,
+    "title": "HP Pavilion 16",
+    "description": "HP Pavilion 16-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+    "price": 50099,
+    "discountPercentage": 8.18,
+    "rating": 4,
+    "stock": 100,
+    "brand": "HP Pavilion",
+    "category": "laptops",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/7/2.jpg"
+    ]
+},
+{
+  "id": 38,
+  "title": "HP Pavilion 15S",
+  "description": "HP Pavilion 15S Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+  "price": 60099,
+  "discountPercentage": 8.18,
+  "rating": 4,
+  "stock": 100,
+  "brand": "HP Pavilion",
+  "category": "laptops",
+  "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg",
+  "images": [
+      "https://cdn.dummyjson.com/product-images/9/2.png",
+  ]
+},
+
+
+{
+  "id": 39,
+  "title": "HP Pavilion 16S",
+  "description": "HP Pavilion 16S Gaming Laptop 11th Gen Core i7, 16GB RAM, 512GB SSD, RTX 3060 6GB Graphics, Windows 11",
+  "price": 60200.00,
+  "discountPercentage": 8.18,
+  "rating": 4.5,
+  "stock": 75,
+  "brand": "HP Pavilion",
+  "category": "laptops",
+  "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg",
+  "images": [
+      "https://cdn.dummyjson.com/product-images/6/4.jpg"
+  ]
+}, {
+  "id": 40,
+  "title": "HP Pavilion 15S Plus",
+  "description": "HP Pavilion 15S Plus Gaming Laptop 10th Gen Core i5, 8GB RAM, 256GB SSD, GTX 1650 4GB Graphics, Windows 10",
+  "price": 6009.90,
+  "discountPercentage": 8.18,
+  "rating": 4.5,
+  "stock": 1000,
+  "brand": "HP Pavilion",
+  "category": "laptops",
+  "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg",
+  "images": [
+      "https://cdn.dummyjson.com/product-images/8/2.jpg",
+  ]
+}, 
+{
+  "id": 41,
+  "title": "HP Pavilion 17S",
+  "description": "HP Pavilion 17S Gaming Laptop 11th Gen Core i7, 16GB RAM, 1TB SSD, RTX 3070 8GB Graphics, Windows 11",
+  "price": 1599.99,
+  "discountPercentage": 8.18,
+  "rating": 4.7,
+  "stock": 500,
+  "brand": "HP Pavilion",
+  "category": "laptops",
+  "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg",
+  "images": [
+       "https://cdn.dummyjson.com/product-images/8/4.jpg",
+  ]
+},
+{
+    "id": 42,
+    "title": "HP Pavilion Pro S",
+    "description": "HP Pavilion Pro S Gaming Laptop 11th Gen Core i7, 16GB RAM, 1TB SSD, RTX 3070 8GB Graphics, Windows 11",
+    "price": 75909.99,
+    "discountPercentage": 10.18,
+    "rating": 4,
+    "stock": 550,
+    "brand": "HP Pavilion",
+    "category": "laptops",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/9/4.jpg"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "HP Pavilion Pro plus",
+    "description": "HP Pavilion Pro plus Gaming Laptop 11th Gen Core i7, 16GB RAM, 1TB SSD, RTX 3070 8GB Graphics, Windows 11",
+    "price": 85909.99,
+    "discountPercentage": 15,
+    "rating": 4.5,
+    "stock": 200,
+    "brand": "HP Pavilion",
+    "category": "laptops",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/8/4.jpg",
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Pasta 500 grams",
+    "description": "Fine quality Branded Product Keep in a cool and dry place",
+    "price": 100,
+    "discountPercentage": 4,
+    "rating": 4,
+    "stock": 150,
+    "brand": "Bakers",
+    "category": "groceries",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/21/thumbnail.png",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/22/2.jpg",
+    ]
+},
+{
+    "id": 45,
+    "title": "Food flavours",
+    "description": "Fine quality flavours, Keep in a cool and dry place",
+    "price": 80,
+    "discountPercentage": 10,
+    "rating": 4.1,
+    "stock": 200,
+    "brand": "Bakers",
+    "category": "groceries",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/21/thumbnail.png",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/23/2.jpg",
+    ]
+},
 ]
 export default OrderData
