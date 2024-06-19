@@ -256,7 +256,7 @@ const OrderData =[
   },
   {
       "id": 14,
-      "title": "Non-Alcoholic Concentrated Perfume Oil",
+      "title": "Non-Alcoholic Perfume Oil",
       "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
       "price": 120,
       "discountPercentage": 15.6,
@@ -367,7 +367,7 @@ const OrderData =[
   },
   {
       "id": 20,
-      "title": "Freckle Treatment Cream- 15gm",
+      "title": "Freckle Treatment Cream",
       "description": "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
       "price": 70,
       "discountPercentage": 16.99,
@@ -553,23 +553,20 @@ const OrderData =[
       ]
   },
   {
-      "id": 30,
-      "title": "Key Holder",
-      "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
-      "price": 30,
-      "discountPercentage": 2.92,
-      "rating": 4.92,
-      "stock": 54,
-      "brand": "Golden",
-      "category": "home-decoration",
-      "thumbnail": "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg",
-      "images": [
-          "https://cdn.dummyjson.com/product-images/30/1.jpg",
-          "https://cdn.dummyjson.com/product-images/30/2.jpg",
-          "https://cdn.dummyjson.com/product-images/30/3.jpg",
-          "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
-      ]
-  },
+    "id": 30,
+    "title": "Wall Decor small",
+    "description": "Package Include 6 Birds with Adhesive Tape Shape: 3D Shaped Wooden Birds Material: Wooden MDF, Laminated 3.5mm",
+    "price": 500,
+    "discountPercentage": 25,
+    "rating": 4.47,
+    "stock": 200,
+    "brand": "Wall Decor",
+    "category": "home-decoration",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/27/thumbnail.webp",
+    "images": [          
+        "https://cdn.dummyjson.com/product-images/26/5.jpg",
+    ]
+},
   {
     "id": 31,
     "title": "iPhone XR",
@@ -797,5 +794,219 @@ const OrderData =[
         "https://cdn.dummyjson.com/product-images/23/2.jpg",
     ]
 },
+{
+    "id": 46,
+    "title": "Oil Free Moisturizer 100ml",
+    "description": "Dermive Oil Free Moisturizer with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.",
+    "price": 800,
+    "discountPercentage": 15,
+    "rating": 4.1,
+    "stock": 800,
+    "brand": "Dermive",
+    "category": "skincare",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/18/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/18/4.jpg",
+    ]
+},
+{
+    "id": 47,
+    "title": "Serum 200ml",
+    "description": "Serum Oil Free Moisturizer with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.",
+    "price": 160,
+    "discountPercentage":15,
+    "rating": 4.8,
+    "stock": 110,
+    "brand": "Loreal",
+    "category": "skincare",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/18/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/16/3.jpg",
+    ]
+},
+{
+    "id": 48,
+    "title": "Revitalift 500ml",
+    "description": "Revitalift with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.",
+    "price": 250,
+    "discountPercentage":20,
+    "rating": 4.2,
+    "stock": 450,
+    "brand": "Revitalift",
+    "category": "skincare",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/18/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/16/4.jpg",
+    ]
+},
+{
+    "id": 49,
+    "title": "Bio lotion 500ml",
+    "description": "Oil Free Moisturizer good for skin",
+    "price": 400,
+    "discountPercentage":25,
+    "rating": 4.7,
+    "stock": 500,
+    "brand": "Bio Organic",
+    "category": "skincare",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/18/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/17/2.jpg",
+    ]
+},
+{
+    "id": 50,
+    "title": "Dermi Ve 200ml",
+    "description": "Oil Free Moisturizer good for skin",
+    "price": 200,
+    "discountPercentage":15,
+    "rating": 4.5,
+    "stock": 200,
+    "brand": "Darmi Ve",
+    "category": "skincare",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/18/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/18/3.jpg",
+  ]
+},
+{
+    "id": 51,
+    "title": "Tea Tree oil 400ml",
+    "description": "Oil Free Moisturizer good for skin",
+    "price": 150,
+    "discountPercentage":25,
+    "rating": 4.2,
+    "stock": 400,
+    "brand": "Bio Organic",
+    "category": "skincare",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/18/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/17/3.jpg",
+    ]
+},
+{
+    "id": 52,
+    "title": "Bio lotion 100ml",
+    "description": "Oil Free Moisturizer good for skin",
+    "price": 100,
+    "discountPercentage":20,
+    "rating": 4.5,
+    "stock": 800,
+    "brand": "Bio Organic",
+    "category": "skincare",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/18/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/17/2.jpg",
+    ]
+},
+{
+    "id": 53,
+    "title": "PlanetMist",
+    "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml PlanetMist",
+    "price": 500,
+    "discountPercentage": 10,
+    "rating": 4,
+    "stock": 150,
+    "brand": "PlanetMist",
+    "category": "fragrances",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/14/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/11/2.jpg",
+    ]
+},
+{
+    "id": 54,
+    "title": "Royal Mirage Oil",
+    "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Royal Mirage Oil",
+    "price": 800,
+    "discountPercentage": 20,
+    "rating": 4.5,
+    "stock": 200,
+    "brand": "Royal Mirage",
+    "category": "fragrances",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/14/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/12/2.jpg",
+    ]
+},
+{
+    "id": 55,
+    "title": "Perfume Oil",
+    "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Perfume Oil",
+    "price": 200,
+    "discountPercentage": 15,
+    "rating": 4,
+    "stock": 250,
+    "brand": "Al Munakh",
+    "category": "fragrances",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/14/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/12/4.jpg",
+    ]
+},
+{
+    "id": 56,
+    "title": "Wall Decor",
+    "description": "Package Include 6 Birds with Adhesive Tape Shape: 3D Shaped Wooden Birds Material: Wooden MDF, Laminated 3.5mm",
+    "price": 500,
+    "discountPercentage": 25.00,
+    "rating": 4.41,
+    "stock": 150,
+    "brand": "Wall Decor",
+    "category": "home-decoration",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/27/thumbnail.webp",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/26/2.jpg",
+    ]
+},
+{
+    "id": 57,
+    "title": "Key Holder",
+    "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
+    "price": 30,
+    "discountPercentage": 2.92,
+    "rating": 4.92,
+    "stock": 54,
+    "brand": "Golden",
+    "category": "home-decoration",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/30/1.jpg",
+        "https://cdn.dummyjson.com/product-images/30/2.jpg",
+        "https://cdn.dummyjson.com/product-images/30/3.jpg",
+        "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
+    ]
+},
+{
+    "id": 58,
+    "title": "Wall Decor Medium",
+    "description": "Package Include 6 Birds with Adhesive Tape Shape: 3D Shaped Wooden Birds Material: Wooden MDF, Laminated 3.5mm",
+    "price": 100,
+    "discountPercentage": 20,
+    "rating": 4,
+    "stock": 400,
+    "brand": "Wall Decor",
+    "category": "home-decoration",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/27/thumbnail.webp",
+    "images": [         
+        "https://cdn.dummyjson.com/product-images/26/4.jpg",
+    ]
+},
+{
+    "id": 59,
+    "title": "Daal 500g",
+    "description": "Fine quality flavours, Keep in a cool and dry place",
+    "price": 150,
+    "discountPercentage": 20,
+    "rating": 4.5,
+    "stock": 250,
+    "brand": "Real protein",
+    "category": "groceries",
+    "thumbnail": "https://cdn.dummyjson.com/product-images/21/thumbnail.png",
+    "images": [
+        "https://cdn.dummyjson.com/product-images/21/2.jpg",
+    ]
+},
+
 ]
 export default OrderData
