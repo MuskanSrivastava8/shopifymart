@@ -19,13 +19,12 @@ function CartPage() {
       return data.id === i;
     });
   });
-  let priceSum = 0
-  CartDetails.map((itemList)=>{
-    itemList.map((individualItem)=>{
-      priceSum+=individualItem.price;
-    })
- 
-  })
+  let priceSum = 0;
+  CartDetails.map((itemList) => {
+    itemList.map((individualItem) => {
+      priceSum += individualItem.price;
+    });
+  });
   return (
     <>
       {showHomePageComponentResp ? (
@@ -49,10 +48,15 @@ function CartPage() {
               </span>
             </div>
           </div>
-        )}        
-      </div>
-      <div className="cart_price_div">
-        <div><span style={{color:"gray", fontWeight: "400"}}>Subtotal ({CartDetails.length} items) : </span><span> Rs {priceSum}</span></div>
+        )}
+        <div className="cart_price_div">
+          <div>
+            <span style={{ color: "gray", fontWeight: "400" }}>
+              Subtotal ({CartDetails.length} items) :{" "}
+            </span>
+            <span> Rs {priceSum}</span>
+          </div>
+        </div>
       </div>
     </>
   );
