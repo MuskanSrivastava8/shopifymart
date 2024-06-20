@@ -55,7 +55,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: 100%;
-    background-color: gray;
+    background-color:#2d2b2b;
     justify-content: space-around;
 }
 
@@ -66,6 +66,13 @@
     width: 100%;
     background-color: rgb(155, 152, 152);
     justify-content: space-around;
+}
+.FooterCatagoryLinks{
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    font-size: .8rem;
+    font-family: system-ui;
 }
 
 @media only screen and (max-width: 904px) {

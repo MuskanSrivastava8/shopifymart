@@ -6,7 +6,10 @@ import { BsGithub } from "react-icons/bs";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
 import { useDispatch } from "react-redux";
-import { updateRenderComponent, updateCatagorySelected } from "../../Store/store";
+import {
+  updateRenderComponent,
+  updateCatagorySelected,
+} from "../../Store/store";
 
 export default function Footer() {
   const dispatch = useDispatch();
@@ -47,42 +50,37 @@ export default function Footer() {
     dispatch(updateRenderComponent("CatagoryDetail"));
     dispatch(updateCatagorySelected("home-decoration"));
   };
-  
+
   return (
     <React.Fragment>
       <div className="subfooter">
         <div className="footer_catagory">
-          <div onClick={SmartphoneBtnClicked} style={{ cursor: "pointer" }}>
-            Smartphone
-          </div>
-          <div onClick={LaptopsBtnClicked} style={{ cursor: "pointer" }}>
-            Laptops
-          </div>
-          <div onClick={FragnanceBtnClicked} style={{ cursor: "pointer" }}>
-            Fragnance
-          </div>
-          <div onClick={SkincareBtnClicked} style={{ cursor: "pointer" }}>
-            Skincare
-          </div>
-          <div onClick={GroceryBtnClicked} style={{ cursor: "pointer" }}>
-            Grocery
-          </div>
-          <div onClick={HomeDecorationBtnClicked} style={{ cursor: "pointer" }}>
-            Home Decoration
+          <div style={{ color: "gray", marginBottom: ".8rem" }}>Catagory</div>
+
+          <div className="FooterCatagoryLinks">
+            <div onClick={SmartphoneBtnClicked}>Smartphone</div>
+            <div onClick={LaptopsBtnClicked}>Laptops</div>
+            <div onClick={FragnanceBtnClicked}>Fragnance</div>
+            <div onClick={SkincareBtnClicked}>Skincare</div>
+            <div onClick={GroceryBtnClicked}>Grocery</div>
+            <div onClick={HomeDecorationBtnClicked}>Home Decoration</div>
           </div>
         </div>
         <div className="footer_links">
-          <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
-            Wishlist
-          </div>
-          <div onClick={homeBtnClicked} style={{ cursor: "pointer" }}>
-            Home
-          </div>
-          <div onClick={cartBtnClicked} style={{ cursor: "pointer" }}>
-            Cart
-          </div>
-          <div onClick={UserBtnClicked} style={{ cursor: "pointer" }}>
-            Profile
+          <div style={{ color: "gray", marginBottom: ".8rem" }}>Links</div>
+          <div className="FooterCatagoryLinks">
+            <div onClick={wishListBtnClicked} style={{ cursor: "pointer" }}>
+              Wishlist
+            </div>
+            <div onClick={homeBtnClicked} style={{ cursor: "pointer" }}>
+              Home
+            </div>
+            <div onClick={cartBtnClicked} style={{ cursor: "pointer" }}>
+              Cart
+            </div>
+            <div onClick={UserBtnClicked} style={{ cursor: "pointer" }}>
+              Profile
+            </div>
           </div>
         </div>
       </div>
