@@ -21,7 +21,9 @@ import {
 const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
   const navigateToCatagoryPage = () => {
-    dispatch(updateRenderComponent(catagorySelectedResp ? "CatagoryDetail" : "/"));
+    dispatch(
+      updateRenderComponent(catagorySelectedResp ? "CatagoryDetail" : "/")
+    );
     console.log("btn clicked............");
   };
   const productDataResp = useSelector((store) => store.STORE.itemData);
@@ -61,10 +63,12 @@ const DetailPage = (catagoryName) => {
   const RemoveFromCartFunction = () => {
     dispatch(updateCart(itemSelectedResult[0].id));
   };
-
   const AddToWishListFunction = () => {
     dispatch(updateWishList(itemSelectedResult[0].id));
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <React.Fragment>

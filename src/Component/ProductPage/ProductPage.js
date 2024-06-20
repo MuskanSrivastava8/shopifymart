@@ -33,9 +33,11 @@ const ProductPage = () => {
   });
   useEffect(() => {
     dispatch(updateItemDataAction(OrderDataRes));
-  }, [OrderDataRes]);
+  }, [OrderDataRes, dispatch]);
   const userDetailResp = useSelector((store) => store.STORE.userDetail);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

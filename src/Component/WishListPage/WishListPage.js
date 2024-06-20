@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import ItemCard from "../ProductPage/ItemCard";
 import "./WishListPage.scss";
@@ -18,6 +18,9 @@ function WishListPage() {
   const showCartPageComponentResp = useSelector(
     (store) => store.STORE.showCartPageComponent
   );
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
       {showHomePageComponentResp ? (

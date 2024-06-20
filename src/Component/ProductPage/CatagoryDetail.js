@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ItemCard from "./ItemCard";
 import { useSelector } from "react-redux";
 import "./catagoryDetail.scss";
 import Button from "@mui/material/Button";
 import { useDispatch } from "react-redux";
-import { updateCatagorySelected,updateRenderComponent } from "../../Store/store";
+import { updateRenderComponent } from "../../Store/store";
 import { IoIosArrowRoundBack } from "react-icons/io";
 
 const CatagoryDetail = () => {
@@ -17,8 +17,11 @@ const CatagoryDetail = () => {
   });
   const dispatch = useDispatch();
   const navigateToHomePage = () => {
-    dispatch(updateRenderComponent('/'));
+    dispatch(updateRenderComponent("/"));
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <React.Fragment>
       <div className="main_catagoryDetail">

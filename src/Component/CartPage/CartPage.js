@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import ItemCard from "../ProductPage/ItemCard";
 import { Navigate } from "react-router-dom";
@@ -25,6 +25,9 @@ function CartPage() {
       priceSum += individualItem.price;
     });
   });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {showHomePageComponentResp ? (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import "./UserPage.scss";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -50,6 +50,9 @@ const UserPage = () => {
   if (profileCreatedResp == true && userDetailResp !== undefined) {
     firstNameRes = userDetailResp.firstName;
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="UserPage_Main">
       <div className="UserPage_Content_div">
