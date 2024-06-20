@@ -12,6 +12,8 @@ const ProductPage = () => {
   const OrderDataRes = OrderData;
   const dispatch = useDispatch();
   const itemData = useSelector((store) => store.STORE.itemData);
+  const userDetailResp = useSelector((store) => store.STORE.userDetail);
+
   const homeDecorationItems = itemData.filter((i) => {
     return i.category === "home-decoration";
   });
@@ -21,7 +23,6 @@ const ProductPage = () => {
   const groceriesItems = itemData.filter((i) => {
     return i.category === "groceries";
   });
-
   const skincareItems = itemData.filter((i) => {
     return i.category === "skincare";
   });
@@ -31,13 +32,18 @@ const ProductPage = () => {
   const laptopsItems = itemData.filter((i) => {
     return i.category === "laptops";
   });
+
   useEffect(() => {
     dispatch(updateItemDataAction(OrderDataRes));
   }, [OrderDataRes, dispatch]);
-  const userDetailResp = useSelector((store) => store.STORE.userDetail);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const moveToTopBtnClicked = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <div>
@@ -83,6 +89,7 @@ const ProductPage = () => {
             return <ItemCard itemsData={i} />;
           })}
         </div>
+        <div className="moveToTop"  onClick={moveToTopBtnClicked} style={{ cursor: "pointer" }}> Move to top </div>
       </div>
     </>
   );

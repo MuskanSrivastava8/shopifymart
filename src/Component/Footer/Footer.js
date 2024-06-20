@@ -50,7 +50,6 @@ export default function Footer() {
   
   return (
     <React.Fragment>
-      <div className="moveToTop"  onClick={homeBtnClicked} style={{ cursor: "pointer" }}> Home </div>
       <div className="subfooter">
         <div className="footer_catagory">
           <div onClick={SmartphoneBtnClicked} style={{ cursor: "pointer" }}>

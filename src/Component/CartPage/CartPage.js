@@ -28,6 +28,10 @@ function CartPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const moveToTopBtnClicked = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       {showHomePageComponentResp ? (
@@ -59,6 +63,13 @@ function CartPage() {
             </span>
             <span> Rs {priceSum}</span>
           </div>
+        </div>
+        <div
+          className="moveToTop"
+          onClick={moveToTopBtnClicked}
+          style={{ cursor: "pointer" }}
+        >
+          Move to top
         </div>
       </div>
     </>

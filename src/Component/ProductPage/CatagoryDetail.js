@@ -22,6 +22,9 @@ const CatagoryDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const moveToTopBtnClicked = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <React.Fragment>
       <div className="main_catagoryDetail">
@@ -35,6 +38,13 @@ const CatagoryDetail = () => {
             catagoryFilterItems.map((i) => {
               return <ItemCard itemsData={i} />;
             })}
+        </div>
+        <div
+          className="moveToTop"
+          onClick={moveToTopBtnClicked}
+          style={{ cursor: "pointer" }}
+        >
+          Move to top
         </div>
       </div>
     </React.Fragment>

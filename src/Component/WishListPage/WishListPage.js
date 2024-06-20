@@ -19,8 +19,11 @@ function WishListPage() {
     (store) => store.STORE.showCartPageComponent
   );
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
+  const moveToTopBtnClicked = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       {showHomePageComponentResp ? (
@@ -45,6 +48,13 @@ function WishListPage() {
             </div>
           </div>
         )}
+      </div>
+      <div
+        className="moveToTop"
+        onClick={moveToTopBtnClicked}
+        style={{ cursor: "pointer" }}
+      >
+        Move to top
       </div>
     </>
   );
