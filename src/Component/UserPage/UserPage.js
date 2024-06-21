@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./UserPage.scss";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -63,10 +63,11 @@ const UserPage = () => {
               fontSize: ".8rem",
             }}
           >
-            <div style={{
-              marginBottom: "1rem",
-              
-            }}>
+            <div
+              style={{
+                marginBottom: "1rem",
+              }}
+            >
               <strong>
                 <i> Hey {profileCreatedResp ? firstNameRes : "Anonymous"} </i>,
               </strong>

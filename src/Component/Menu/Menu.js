@@ -26,6 +26,13 @@ const Menu = () => {
   const homeBtnClicked = () => {
     dispatch(updateRenderComponent("/"));
   };
+  const userDetailResp = useSelector((store) => store.STORE.userDetail);
+  const profileCreatedResp = useSelector((store) => store.STORE.profileCreated);
+
+  let firstNameRes;
+  if (profileCreatedResp == true && userDetailResp !== undefined) {
+    firstNameRes = userDetailResp.firstName;
+  }
   return (
     <>
       <div className="main">
@@ -41,27 +48,32 @@ const Menu = () => {
           </div>
         </div>
         <div className="main_right">
-          <div onClick={homeBtnClicked}>
-            <MdHome style={{ fontSize: "1.8rem", cursor: "pointer" }} />
-          </div>
-          <div onClick={UserBtnClicked}>
-            <FaUser style={{ fontSize: "1.4rem", cursor: "pointer" }} />
-          </div>
-          <div className="wishListIcon_main" onClick={wishListBtnClicked}>
-            <FaHeart
-              style={{ color: "red", fontSize: "1.5rem", cursor: "pointer" }}
-            />
-            <div className="wishListIcon_count">
-              <strong>{wishlistRespLength}</strong>
-            </div>{" "}
-          </div>
-          <div className="cart_main" onClick={cartBtnClicked}>
-            <div>
-              <IoCart style={{ fontSize: "1.5rem", cursor: "pointer" }} />
+          <div className="main_right_icons">
+            <div onClick={homeBtnClicked}>
+              <MdHome style={{ fontSize: "1.8rem", cursor: "pointer" }} />
             </div>
-            <div className="cart_count">
-              <strong>{cartRespLength}</strong>
-            </div>{" "}
+            <div onClick={UserBtnClicked}>
+              <FaUser style={{ fontSize: "1.4rem", cursor: "pointer" }} />
+            </div>
+            <div className="wishListIcon_main" onClick={wishListBtnClicked}>
+              <FaHeart
+                style={{ color: "red", fontSize: "1.5rem", cursor: "pointer" }}
+              />
+              <div className="wishListIcon_count">
+                <strong>{wishlistRespLength}</strong>
+              </div>{" "}
+            </div>
+            <div className="cart_main" onClick={cartBtnClicked}>
+              <div>
+                <IoCart style={{ fontSize: "1.5rem", cursor: "pointer" }} />
+              </div>
+              <div className="cart_count">
+                <strong>{cartRespLength}</strong>
+              </div>{" "}
+            </div>
+          </div>
+          <div className="main_right_UserName">
+            Hey {profileCreatedResp ? firstNameRes : "Anonymous"} 
           </div>
         </div>
       </div>

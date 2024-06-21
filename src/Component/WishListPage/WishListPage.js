@@ -3,8 +3,12 @@ import { useSelector } from "react-redux";
 import ItemCard from "../ProductPage/ItemCard";
 import "./WishListPage.scss";
 import { Navigate } from "react-router-dom";
+import { GiShoppingCart } from "react-icons/gi";
+import { useDispatch } from "react-redux";
+import { updateRenderComponent } from "../../Store/store";
 
 function WishListPage() {
+  const dispatch = useDispatch();
   const showWishListResp = useSelector((store) => store.STORE.wishlist);
   const itemData = useSelector((store) => store.STORE.itemData);
   let wishListDetails = showWishListResp.map((i) => {
@@ -24,6 +28,9 @@ function WishListPage() {
   const moveToTopBtnClicked = () => {
     window.scrollTo(0, 0);
   };
+  const moveToHomePage = () => {
+    dispatch(updateRenderComponent("/"));
+  };
   return (
     <>
       {showHomePageComponentResp ? (
@@ -41,6 +48,18 @@ function WishListPage() {
           })
         ) : (
           <div className="No_Item_Found_main">
+            <GiShoppingCart style={{ fontSize: "10rem" }} />
+            <div
+              style={{
+                fontSize: "0.8rem",
+                color: "blue",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+              onClick={moveToHomePage}
+            >
+              <i>Go to Home</i>
+            </div>
             <div className="No_Item_Found_text">
               <span style={{ fontSize: "0.8rem", color: "rgb(135, 135, 135)" }}>
                 <i>Oops wishlist is empty. Go and explore .....</i>

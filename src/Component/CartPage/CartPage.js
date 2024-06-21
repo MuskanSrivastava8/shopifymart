@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import ItemCard from "../ProductPage/ItemCard";
 import { Navigate } from "react-router-dom";
 import "./CartPage.scss";
 import CartAddeditem from "./CartAddeditem";
+import { GiShoppingCart } from "react-icons/gi";
+import { useDispatch } from "react-redux";
+import { updateRenderComponent } from "../../Store/store";
+
 function CartPage() {
+  const dispatch = useDispatch();
   const showHomePageComponentResp = useSelector(
     (store) => store.STORE.showHomePageComponent
   );
@@ -32,6 +36,9 @@ function CartPage() {
   const moveToTopBtnClicked = () => {
     window.scrollTo(0, 0);
   };
+  const moveToHomePage = () => {
+    dispatch(updateRenderComponent("/"));
+  };
   return (
     <>
       {showHomePageComponentResp ? (
@@ -49,6 +56,18 @@ function CartPage() {
           })
         ) : (
           <div className="No_Item_Found_main">
+            <GiShoppingCart style={{ fontSize: "10rem" }} />
+            <div
+              style={{
+                fontSize: "0.8rem",
+                color: "blue",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+              onClick={moveToHomePage}
+            >
+              <i>Go to Home</i>
+            </div>
             <div className="No_Item_Found_text">
               <span style={{ fontSize: "0.8rem", color: "rgb(135, 135, 135)" }}>
                 <i>Oops cart is empty. Go and explore .....</i>

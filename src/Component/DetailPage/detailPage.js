@@ -66,6 +66,10 @@ const DetailPage = (catagoryName) => {
   const AddToWishListFunction = () => {
     dispatch(updateWishList(itemSelectedResult[0].id));
   };
+  const MoveToCartPageFunction = () => {
+    dispatch(updateCart(itemSelectedResult[0].id));
+    dispatch(updateRenderComponent("CartPage"));
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -245,7 +249,7 @@ const DetailPage = (catagoryName) => {
                       </Button>
                     </div>
                     <div>
-                      <Button variant="contained" size="small">
+                      <Button variant="contained" size="small" onClick={MoveToCartPageFunction}>
                         Buy now
                       </Button>
                     </div>

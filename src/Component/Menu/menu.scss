@@ -17,9 +17,27 @@
 
 .main_right {
     display: flex;
-    justify-content: space-around;
+    justify-content: inherit;
     width: 40%;
     align-items: center;
+    flex-direction: column;
+}
+.main_right_icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.main_right_UserName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    font-size: .7rem;
+    font-style: italic;
+    color: azure;
+    border-top: .1rem solid;
 }
 .wishListIcon_main{
     display: flex;
