@@ -1,0 +1,35 @@
+.main_checkoutPage_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 65vh;
+}
+
+.AdressReview {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    width: 70vw;
+    border: .1rem solid #e8e3e3;
+    box-shadow: 0 0 4px rgba(40, 44, 63, .2);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+.checkOutName {
+    font-weight: 700;
+    font-size: 14px;
+    color: #282c3f;
+    text-transform: capitalize;
+    word-break: break-all;
+}
+.checkOutDetails{
+    font-size: 12px;
+    color: #5a5b5e;
+    text-transform: capitalize;
+    word-break: break-all;   
+}

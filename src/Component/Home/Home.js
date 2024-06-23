@@ -10,6 +10,7 @@ import CartPage from "../CartPage/CartPage";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import UserPage from "../UserPage/UserPage";
+import CheckoutPage from "../CheckoutPage/CheckoutPage";
 
 function Home() {
   const renderedComponentResp = useSelector(
@@ -32,6 +33,7 @@ function Home() {
         <Route exact path="/WishListPage" element={<WishListPage />} />
         <Route exact path="/CartPage" element={<CartPage />} />
         <Route exact path="/UserPage" element={<UserPage />} />
+        <Route exact path="/CheckoutPage" element={<CheckoutPage />} />        
       </Routes>
       <Footer />
     </div>

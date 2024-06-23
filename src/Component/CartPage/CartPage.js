@@ -6,6 +6,7 @@ import CartAddeditem from "./CartAddeditem";
 import { GiShoppingCart } from "react-icons/gi";
 import { useDispatch } from "react-redux";
 import { updateRenderComponent } from "../../Store/store";
+import Button from "@mui/material/Button";
 
 function CartPage() {
   const dispatch = useDispatch();
@@ -38,6 +39,9 @@ function CartPage() {
   };
   const moveToHomePage = () => {
     dispatch(updateRenderComponent("/"));
+  };
+  const moveToCheckoutPage = () => {
+    dispatch(updateRenderComponent("CheckoutPage"));
   };
   return (
     <>
@@ -83,6 +87,21 @@ function CartPage() {
             <span> Rs {priceSum}</span>
           </div>
         </div>
+        <div style={{marginBottom:"1rem"}}>
+            {CartDetails.length > 0 ? (
+              <div>
+                <Button
+                  variant="contained"
+                  size="small"
+                  onClick={moveToCheckoutPage}
+                >
+                  Place Order
+                </Button>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
         <div
           className="moveToTop"
           onClick={moveToTopBtnClicked}
