@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import ProductPage from "../ProductPage/ProductPage";
 import Menu from "../Menu/Menu";
 import Footer from "../Footer/Footer";
@@ -20,7 +20,7 @@ function Home() {
 
   useEffect(() => {
     navigate(renderedComponentResp);
-  }, [renderedComponentResp]);
+  }, [renderedComponentResp, navigate]);
 
   return (
     <div>

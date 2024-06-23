@@ -26,8 +26,8 @@ function CartPage() {
   });
   let priceSum = 0;
   CartDetails.map((itemList) => {
-    itemList.map((individualItem) => {
-      priceSum += individualItem.price;
+   return itemList.map((individualItem) => {
+     return priceSum += individualItem.price;
     });
   });
   useEffect(() => {
