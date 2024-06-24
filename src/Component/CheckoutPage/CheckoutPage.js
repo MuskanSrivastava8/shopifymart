@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { updateRenderComponent } from "../../Store/store";
 import { useDispatch } from "react-redux";
 import "./CheckoutPage.scss";
+import Button from "@mui/material/Button";
 
 const CheckoutPage = () => {
   const profileCreatedResp = useSelector((store) => store.STORE.profileCreated);
@@ -15,7 +16,6 @@ const CheckoutPage = () => {
   function handleChange(e) {
     setChecked(e.target.checked);
   }
-  console.log("checked", checked);
   return (
     <>
       <div className="main_checkoutPage_div">
@@ -40,11 +40,24 @@ const CheckoutPage = () => {
               Review the Adrress
             </div>
             <div className="AdressReview">
-              <div className="checkOutName">{userDetailResp.firstName} {userDetailResp.lastName}</div>
+              <div className="checkOutName">
+                {userDetailResp.firstName} {userDetailResp.lastName}
+              </div>
               <div className="checkOutDetails">{userDetailResp.address}</div>
-              <div className="checkOutDetails">{userDetailResp.phoneNumber}</div>
+              <div className="checkOutDetails">
+                {userDetailResp.phoneNumber}
+              </div>
               <div>Pay on delivery Available</div>
-              <div>Edit details</div>
+              <div>
+                {" "}
+                <Button
+                  variant="contained"
+                  size="small"
+                  onClick={moveToUserProfilePage}
+                >
+                  Edit details
+                </Button>
+              </div>
             </div>
             <div style={{ display: "flex", flexDirection: "row" }}>
               <div>
@@ -52,11 +65,21 @@ const CheckoutPage = () => {
               </div>
               <div>
                 {checked ? (
-                  <div> Address is selected </div>
+                  <div> Order will be delivered at slected address</div>
                 ) : (
                   <div>Select an address</div>
                 )}
               </div>
+            </div>
+            <div>
+              <Button
+                variant="contained"
+                size="small"
+                disabled={!checked}
+                //onClick={moveToUserProfilePage}
+              >
+                Place Order
+              </Button>
             </div>
           </div>
         )}
