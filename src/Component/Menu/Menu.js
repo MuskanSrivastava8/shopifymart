@@ -33,6 +33,10 @@ const Menu = () => {
   if (profileCreatedResp == true && userDetailResp !== undefined) {
     firstNameRes = userDetailResp.firstName;
   }
+  const moveToHomePage = () => {
+    dispatch(updateRenderComponent("/"));
+  };
+
   return (
     <>
       <div className="main">
@@ -42,7 +46,9 @@ const Menu = () => {
               marginLeft: "1rem",
               fontSize: "1.2rem",
               fontWeight: "500",
+              cursor:"pointer",
             }}
+            onClick={moveToHomePage}
           >
             ShopifyMart
           </div>
@@ -73,7 +79,7 @@ const Menu = () => {
             </div>
           </div>
           <div className="main_right_UserName">
-            Hey {profileCreatedResp ? firstNameRes : "Anonymous"} 
+            Hey {profileCreatedResp ? firstNameRes : "Anonymous"}
           </div>
         </div>
       </div>

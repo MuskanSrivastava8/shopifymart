@@ -8,3 +8,12 @@
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
 }
+
+@media only screen and (max-width: 414px) {
+
+    //Iphone XR
+    .main_catagoryList{
+        margin: 0rem;
+    }
+   
+}

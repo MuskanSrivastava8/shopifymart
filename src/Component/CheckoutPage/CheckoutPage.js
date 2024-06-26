@@ -14,6 +14,9 @@ const CheckoutPage = () => {
   const moveToUserProfilePage = () => {
     dispatch(updateRenderComponent("UserPage"));
   };
+  const moveToOrderPlacedPagePage = () => {
+    dispatch(updateRenderComponent("OrderPlacedPage"));
+  };
   const [checked, setChecked] = React.useState(false);
   function handleChange(e) {
     setChecked(e.target.checked);
@@ -109,7 +112,7 @@ const CheckoutPage = () => {
                 variant="contained"
                 size="small"
                 disabled={!checked}
-               // onClick={moveToUserProfilePage}
+                onClick={moveToOrderPlacedPagePage}
               >
                 Place Order
               </Button>
