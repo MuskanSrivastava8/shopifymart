@@ -5,3 +5,25 @@
     align-items: center;
     height: 65vh;
 }
+
+.OrderDetail_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2rem;
+    border: 1px gray;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: rgb(136, 136, 136) 1px 1px 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.div_OrderPlacedPage_heading{
+    margin-bottom: -1.5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: underline;
+    color: #888888;
+}

@@ -15,6 +15,7 @@ export const storeSlice = createSlice({
     renderedComponent : '/',
     userDetail:[],
     profileCreated: false,
+    OrderDetail: [],
   },
   reducers: {
     updateItemDataAction: (storeSlice, action) => {
@@ -71,6 +72,9 @@ export const storeSlice = createSlice({
       currentSlice.userDetail=action.payload;
       currentSlice.profileCreated=true;
     },
+    createOrder: (currentSlice, action) => {
+      currentSlice.OrderDetail=action.payload;
+    },
   },
 });
 export const {
@@ -86,4 +90,5 @@ export const {
   updateCart,
   updateRenderComponent,
   addUserDetails,
+  createOrder,
 } = storeSlice.actions;

@@ -5,8 +5,9 @@ import "./CartPage.scss";
 import CartAddeditem from "./CartAddeditem";
 import { GiShoppingCart } from "react-icons/gi";
 import { useDispatch } from "react-redux";
-import { updateRenderComponent } from "../../Store/store";
+import { updateRenderComponent, createOrder } from "../../Store/store";
 import Button from "@mui/material/Button";
+import { v4 as uuidv4 } from "uuid";
 
 function CartPage() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function CartPage() {
   );
   const CartResp = useSelector((store) => store.STORE.cart);
   const itemData = useSelector((store) => store.STORE.itemData);
+  const userDetailData = useSelector((store) => store.STORE.userDetail);
 
   let CartDetails = CartResp.map((i) => {
     return itemData.filter((data) => {
@@ -26,8 +28,8 @@ function CartPage() {
   });
   let priceSum = 0;
   CartDetails.map((itemList) => {
-   return itemList.map((individualItem) => {
-     return priceSum += individualItem.price;
+    return itemList.map((individualItem) => {
+      return (priceSum += individualItem.price);
     });
   });
   useEffect(() => {
@@ -42,6 +44,20 @@ function CartPage() {
   };
   const moveToCheckoutPage = () => {
     dispatch(updateRenderComponent("CheckoutPage"));
+    const id = uuidv4();
+    const dateOfOrder = new Date().toISOString().slice(0, 10);
+    const numberOfDaysToAdd = Math.floor(Math.random() * 10);
+    let dateOfArrival = new Date(Date.now() + numberOfDaysToAdd * 86400000).toISOString().slice(0, 10);
+    const orderDetail = {
+      orderId: id,
+      items: CartResp,
+      address: userDetailData.address,
+      firstName: userDetailData.firstName,
+      phoneNumber: userDetailData.phoneNumber,
+      dateOfOrder:dateOfOrder,
+      dateOfArrival:dateOfArrival
+    };
+    dispatch(createOrder(orderDetail));
   };
   return (
     <>
@@ -87,21 +103,21 @@ function CartPage() {
             <span> Rs {priceSum}</span>
           </div>
         </div>
-        <div style={{marginBottom:"1rem"}}>
-            {CartDetails.length > 0 ? (
-              <div>
-                <Button
-                  variant="contained"
-                  size="small"
-                  onClick={moveToCheckoutPage}
-                >
-                  Place Order
-                </Button>
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
+        <div style={{ marginBottom: "1rem" }}>
+          {CartDetails.length > 0 ? (
+            <div>
+              <Button
+                variant="contained"
+                size="small"
+                onClick={moveToCheckoutPage}
+              >
+                Place Order
+              </Button>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
         <div
           className="moveToTop"
           onClick={moveToTopBtnClicked}
