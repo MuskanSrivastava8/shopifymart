@@ -1,5 +1,10 @@
 import React from "react";
 import { Carousel } from "antd";
+import img1 from "./Slider_1.JPG";
+import img2 from "./Slider_2.JPG";
+import img3 from "./Slider_3.JPG";
+import img4 from "./Slider_4.JPG";
+
 const contentStyle = {
   height: "220px",
   color: "rgb(255, 255, 255)",
@@ -18,34 +23,22 @@ const Slider = () => {
     <Carousel afterChange={onChange}>
       <div>
         <h3 style={contentStyle}>
-          <img
-            alt="example"
-            src={"https://cdn.dummyjson.com/product-images/1/2.jpg"}
-          />
+          <img alt="example" src={img1} />
         </h3>
       </div>
       <div>
         <h3 style={contentStyle}>
-          <img
-            alt="example1"
-            src={"https://cdn.dummyjson.com/product-images/8/2.jpg"}
-          />
+          <img alt="example1" src={img2} />
         </h3>
       </div>
       <div>
         <h3 style={contentStyle}>
-          <img
-            alt="example"
-            src={"https://cdn.dummyjson.com/product-images/13/2.png"}
-          />
+          <img alt="example" src={img3} />
         </h3>
       </div>
       <div>
         <h3 style={contentStyle}>
-          <img
-            alt="example"
-            src={"https://cdn.dummyjson.com/product-images/16/4.jpg"}
-          />
+          <img alt="example" src={img4} />
         </h3>
       </div>
     </Carousel>
