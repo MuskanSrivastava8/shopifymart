@@ -11,7 +11,7 @@ const OrderData =[
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
       "images": [
-          "https://cdn.dummyjson.com/product-images/1/1.jpg",
+          "https://images.pexels.com/photos/1194760/pexels-photo-1194760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
           "https://cdn.dummyjson.com/product-images/1/2.jpg",
           "https://cdn.dummyjson.com/product-images/1/3.jpg",
           "https://cdn.dummyjson.com/product-images/1/4.jpg",
@@ -30,7 +30,7 @@ const OrderData =[
     "category": "smartphones",
     "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
     "images": [
-        "https://cdn.dummyjson.com/product-images/1/1.jpg",
+        "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=600",
         "https://cdn.dummyjson.com/product-images/1/2.jpg",
         "https://cdn.dummyjson.com/product-images/1/3.jpg",
         "https://cdn.dummyjson.com/product-images/1/4.jpg",
@@ -49,7 +49,7 @@ const OrderData =[
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
       "images": [
-          "https://cdn.dummyjson.com/product-images/2/1.jpg",
+          "https://images.pexels.com/photos/306763/pexels-photo-306763.jpeg?auto=compress&cs=tinysrgb&w=600",
           "https://cdn.dummyjson.com/product-images/2/2.jpg",
           "https://cdn.dummyjson.com/product-images/2/3.jpg",
           "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
@@ -67,7 +67,7 @@ const OrderData =[
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
       "images": [
-          "https://cdn.dummyjson.com/product-images/3/1.jpg"
+          "https://images.pexels.com/photos/236086/pexels-photo-236086.jpeg?auto=compress&cs=tinysrgb&w=600"
       ]
   },
   {
@@ -82,7 +82,7 @@ const OrderData =[
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg",
       "images": [
-          "https://cdn.dummyjson.com/product-images/4/1.jpg",
+          "https://images.pexels.com/photos/226003/pexels-photo-226003.jpeg?auto=compress&cs=tinysrgb&w=600",
           "https://cdn.dummyjson.com/product-images/4/2.jpg",
           "https://cdn.dummyjson.com/product-images/4/3.jpg",
           "https://cdn.dummyjson.com/product-images/4/4.jpg",
@@ -101,7 +101,7 @@ const OrderData =[
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/5/thumbnail.jpg",
       "images": [
-          "https://cdn.dummyjson.com/product-images/5/1.jpg",
+          "https://images.pexels.com/photos/1366998/pexels-photo-1366998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
           "https://cdn.dummyjson.com/product-images/5/2.jpg",
           "https://cdn.dummyjson.com/product-images/5/3.jpg"
       ]
@@ -579,7 +579,7 @@ const OrderData =[
     "category": "smartphones",
     "thumbnail": "https://cdn.dummyjson.com/product-images/1/2.jpg",
     "images": [
-        "https://cdn.dummyjson.com/product-images/2/3.jpg",
+        "https://cdn.dummyjson.com/produpexelsct-images/2/3.jpg",
     ]
 },
 
@@ -625,7 +625,7 @@ const OrderData =[
     "category": "smartphones",
     "thumbnail": "https://cdn.dummyjson.com/product-images/1/2.jpg",
     "images": [
-        "https://cdn.dummyjson.com/product-images/1/4.jpg",
+        "https://images.pexels.com/photos/1366998/pexels-photo-1366998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ]
   },
   {
