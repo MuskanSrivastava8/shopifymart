@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { updateRenderComponent } from "../../Store/store";
 import { MdHome } from "react-icons/md";
 import { useSelector } from "react-redux";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -41,12 +42,22 @@ const Menu = () => {
     <>
       <div className="main">
         <div className="main_left">
+          <div>
+            <MdOutlineShoppingCart
+              style={{
+                marginLeft: "1rem",
+                marginTop: ".5rem",
+                fontSize: "1.5rem",
+                color:"red"
+              }}
+            />
+          </div>
           <div
             style={{
-              marginLeft: "1rem",
+              marginLeft: ".2rem",
               fontSize: "1.2rem",
               fontWeight: "500",
-              cursor:"pointer",
+              cursor: "pointer",
             }}
             onClick={moveToHomePage}
           >

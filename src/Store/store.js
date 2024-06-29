@@ -12,8 +12,8 @@ export const storeSlice = createSlice({
     showHomePageComponent: false,
     showCartPageComponent: false,
     theme: [],
-    renderedComponent : '/',
-    userDetail:[],
+    renderedComponent: "/",
+    userDetail: [],
     profileCreated: false,
     OrderDetail: [],
   },
@@ -65,15 +65,28 @@ export const storeSlice = createSlice({
         }
       }
     },
+    addToCart: (storeSlice, action) => {
+      if (!storeSlice.cart.includes(action.payload)) {
+        storeSlice.cart.push(action.payload);
+      }
+    },
+
+    removeFromCart: (storeSlice, action) => {
+      const index = storeSlice.cart.indexOf(action.payload);
+      if (index > -1) {
+        storeSlice.cart.splice(index, 1);
+      }
+    },
+
     updateRenderComponent: (storeSlice, action) => {
       storeSlice.renderedComponent = action.payload;
     },
     addUserDetails: (currentSlice, action) => {
-      currentSlice.userDetail=action.payload;
-      currentSlice.profileCreated=true;
+      currentSlice.userDetail = action.payload;
+      currentSlice.profileCreated = true;
     },
     createOrder: (currentSlice, action) => {
-      currentSlice.OrderDetail=action.payload;
+      currentSlice.OrderDetail = action.payload;
     },
   },
 });
@@ -91,4 +104,6 @@ export const {
   updateRenderComponent,
   addUserDetails,
   createOrder,
+  removeFromCart,
+  addToCart,
 } = storeSlice.actions;

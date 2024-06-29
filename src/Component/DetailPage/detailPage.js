@@ -11,7 +11,12 @@ import { FaMoneyCheckAlt } from "react-icons/fa";
 import { PiKeyReturnThin } from "react-icons/pi";
 import ItemCard from "../ProductPage/ItemCard";
 import { useDispatch } from "react-redux";
-import { updateCart, updateWishList } from "../../Store/store";
+import {
+  updateCart,
+  updateWishList,
+  removeFromCart,
+  addToCart,
+} from "../../Store/store";
 import {
   setShowWishListComponent,
   setShowCartPageComponent,
@@ -20,6 +25,8 @@ import {
 
 const DetailPage = (catagoryName) => {
   const [showCatagoryPage, setshowCatagoryPage] = useState(false);
+  const [addtoCart, setaddtoCart] = useState(false);
+
   const navigateToCatagoryPage = () => {
     dispatch(
       updateRenderComponent(catagorySelectedResp ? "CatagoryDetail" : "/")
@@ -58,10 +65,12 @@ const DetailPage = (catagoryName) => {
   }, [itemSelectedResp]);
 
   const AddToCartFunction = () => {
-    dispatch(updateCart(itemSelectedResult[0].id));
+    dispatch(addToCart(itemSelectedResult[0].id));
+    setaddtoCart(true);
   };
   const RemoveFromCartFunction = () => {
-    dispatch(updateCart(itemSelectedResult[0].id));
+    dispatch(removeFromCart(itemSelectedResult[0].id));
+    setaddtoCart(false);
   };
   const AddToWishListFunction = () => {
     dispatch(updateWishList(itemSelectedResult[0].id));
@@ -235,6 +244,7 @@ const DetailPage = (catagoryName) => {
                         variant="contained"
                         size="small"
                         onClick={RemoveFromCartFunction}
+                        disabled={!addtoCart}
                       >
                         Remove
                       </Button>
@@ -244,12 +254,17 @@ const DetailPage = (catagoryName) => {
                         variant="contained"
                         size="small"
                         onClick={AddToCartFunction}
+                        disabled={addtoCart}
                       >
                         Add
                       </Button>
                     </div>
                     <div>
-                      <Button variant="contained" size="small" onClick={MoveToCartPageFunction}>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        onClick={MoveToCartPageFunction}
+                      >
                         Buy now
                       </Button>
                     </div>
