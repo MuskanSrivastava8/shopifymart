@@ -8,17 +8,18 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 
 const UserPage = () => {
+  const userDetailData = useSelector((store) => store.STORE.userDetail);
   const [showForm, setshowForm] = useState(false);
   const [showWelcometext, setshowWelcometext] = useState(false);
   const [profileCreated, setProfileCreated] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setlastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [pinCode, setPinCode] = useState("");
-  const [state, setState] = useState("");
-  const [landMark, setLandMark] = useState("");
-  const [address, setAddress] = useState("");
-  const [remark, setRemark] = useState("");
+  const [firstName, setFirstName] = useState(userDetailData.firstName || "" );
+  const [lastName, setlastName] = useState(userDetailData.lastName || "" );
+  const [phoneNumber, setPhoneNumber] = useState(userDetailData.phoneNumber || "" );
+  const [pinCode, setPinCode] = useState(userDetailData.pinCode || "" );
+  const [state, setState] = useState(userDetailData.state || "" );
+  const [landMark, setLandMark] = useState(userDetailData.landMark || "" );
+  const [address, setAddress] = useState(userDetailData.address || "" );
+  const [remark, setRemark] = useState(userDetailData.remark || "" );
   const dispatch = useDispatch();
   const userDetailResp = useSelector((store) => store.STORE.userDetail);
   const profileCreatedResp = useSelector((store) => store.STORE.profileCreated);
@@ -178,8 +179,8 @@ const UserPage = () => {
                     size="small"
                     onClick={createProfile}
                     disabled={!firstName || !lastName}
-                  >
-                    Create Profile
+                  >                   
+                    {!profileCreatedResp ? "Create Profile" : "Save"}
                   </Button>
                 </div>
               </Box>

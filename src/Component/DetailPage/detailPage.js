@@ -235,6 +235,7 @@ const DetailPage = (catagoryName) => {
                         variant="contained"
                         size="small"
                         onClick={AddToWishListFunction}
+                        style={{marginRight: "1rem"}}
                       >
                         WishList
                       </Button>
@@ -242,6 +243,7 @@ const DetailPage = (catagoryName) => {
                     <div>
                       <Button
                         variant="contained"
+                        style={{marginRight: "1rem"}}
                         size="small"
                         onClick={RemoveFromCartFunction}
                         disabled={!addtoCart}
@@ -249,9 +251,12 @@ const DetailPage = (catagoryName) => {
                         Remove
                       </Button>
                     </div>
+                    </div>
+                    <div className="detailPage_btn_set">
                     <div>
                       <Button
                         variant="contained"
+                        style={{marginRight: "1rem"}}
                         size="small"
                         onClick={AddToCartFunction}
                         disabled={addtoCart}
@@ -262,6 +267,7 @@ const DetailPage = (catagoryName) => {
                     <div>
                       <Button
                         variant="contained"
+                        style={{marginRight: "1rem"}}
                         size="small"
                         onClick={MoveToCartPageFunction}
                       >
