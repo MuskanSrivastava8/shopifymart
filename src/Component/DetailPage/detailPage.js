@@ -109,7 +109,7 @@ const DetailPage = (catagoryName) => {
             <div className="detailPage_data_main">
               <div className="detailPage_image_data">
                 <div className="details_data">
-                  <div style={{ fontWeight: "700", fontSize: "1rem" }}>
+                  <div style={{ fontWeight: "700", fontSize: "1.5rem" }}>
                     {itemSelectedResult[0].title}
                   </div>
                   <div style={{ fontSize: "small" }}>
