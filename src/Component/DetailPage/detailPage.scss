@@ -1,7 +1,8 @@
-#detail_page_Main{
-margin-bottom: 4rem;
+#detail_page_Main {
+    margin-bottom: 4rem;
 }
-.detailPage_main_div{
+
+.detailPage_main_div {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -9,40 +10,42 @@ margin-bottom: 4rem;
     flex-wrap: wrap;
 }
 
-.detailPage_btn{
+.detailPage_btn {
     display: flex;
     position: sticky;
     top: 4rem;
     left: 0rem;
     z-index: 1;
 }
-.detailPage_data_main{
+
+.detailPage_data_main {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.detailPage_Address{
+
+.detailPage_Address {
     display: flex;
     flex-direction: row;
 }
-.detailPage_image_data{
+
+.detailPage_image_data {
     display: flex;
     flex-direction: row;
     gap: 0.4rem;
     flex-wrap: wrap;
     margin: 1rem;
 }
-.detailPage_btn_set{
+
+.detailPage_btn_set {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    //width: 100%;
-    margin-top: 2rem;
-    
 }
-.details_data{
+
+.details_data {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -50,7 +53,7 @@ margin-bottom: 4rem;
     gap: 0.2rem;
 }
 
-.detail_extra_info{
+.detail_extra_info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -59,13 +62,15 @@ margin-bottom: 4rem;
     color: #231f1f;
 
 }
-.details_extra_info_div{
+
+.details_extra_info_div {
     display: flex;
     gap: 0.1rem;
     justify-content: center;
     align-items: center;
 }
-.similar_product_text{
+
+.similar_product_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,19 +81,20 @@ margin-bottom: 4rem;
     background-color: #f7f0f0;
     padding: 0.5rem;
 }
+
 @media only screen and (max-width: 904px) {
     //Ipad
 
-   
+
 }
 
 @media only screen and (max-width: 414px) {
 
     //Iphone XR
-    .detailPage_image_main{
+    .detailPage_image_main {
         margin: 1rem;
     }
-   
+
 }
 
 @media only screen and (max-width: 390px) {
